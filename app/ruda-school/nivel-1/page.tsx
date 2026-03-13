@@ -37,7 +37,7 @@ function RudasaurioVideo({
     const timer = setTimeout(() => {
       setMostrar(false)
       onComplete?.()
-    }, 3000) // 3 segundos de animación
+    }, 5000) // 5 segundos (duración del video)
     return () => clearTimeout(timer)
   }, [onComplete])
 
@@ -66,7 +66,7 @@ function RudasaurioVideo({
           src={videos[tipo]} 
           autoPlay 
           loop
-          className="w-48 h-48 mx-auto mb-4 object-contain rounded-xl"
+          className="w-80 h-80 mx-auto mb-4 object-contain rounded-xl"
         />
         <p className="text-xl font-bold text-white mb-4">{mensajes[tipo]}</p>
         
@@ -344,7 +344,7 @@ function ContenidoLeccion({
                 src={pasoActual.imagen} 
                 autoPlay 
                 loop
-                className="w-32 h-32 mx-auto mb-4 object-contain rounded-lg"
+                className="w-48 h-48 mx-auto mb-4 object-contain rounded-lg"
               />
             )}
             <h2 className="text-2xl font-bold text-ruda-gold mb-4">{pasoActual.titulo}</h2>
@@ -475,7 +475,7 @@ export default function Nivel1Gamificado() {
                   src="/assets/Rudasaurio/Rudasaurio%20Woop.mp4" 
                   autoPlay 
                   loop
-                  className="w-16 h-16 object-contain rounded-lg"
+                  className="w-24 h-24 object-contain rounded-lg"
                 />
                 <div>
                   <h1 className="text-3xl font-black text-white">¡Aprende con Rudasaurio!</h1>
