@@ -37,7 +37,7 @@ function RudasaurioVideo({
     const timer = setTimeout(() => {
       setMostrar(false)
       onComplete?.()
-    }, 6000) // 6 segundos para que se aprecie mejor
+    }, 8000) // 8 segundos para móvil
     return () => clearTimeout(timer)
   }, [onComplete])
 
