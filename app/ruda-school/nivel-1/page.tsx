@@ -65,7 +65,7 @@ function RudasaurioVideo({
         <video 
           src={videos[tipo]} 
           autoPlay 
-          loop
+          playsInline
           className="w-80 h-80 mx-auto mb-4 object-contain rounded-xl"
         />
         <p className="text-xl font-bold text-white mb-4">{mensajes[tipo]}</p>
@@ -343,7 +343,7 @@ function ContenidoLeccion({
               <video 
                 src={pasoActual.imagen} 
                 autoPlay 
-                loop
+                playsInline
                 className="w-48 h-48 mx-auto mb-4 object-contain rounded-lg"
               />
             )}
@@ -474,7 +474,7 @@ export default function Nivel1Gamificado() {
                 <video 
                   src="/assets/Rudasaurio/Rudasaurio%20Woop.mp4" 
                   autoPlay 
-                  loop
+                  playsInline
                   className="w-24 h-24 object-contain rounded-lg"
                 />
                 <div>
