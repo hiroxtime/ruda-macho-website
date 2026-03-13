@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+.next/
+
+# Build outputs
+dist/
+build/
+
+# Environment variables (keep private)
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# Large assets (keep local only)
+# *.mp4  # Comentado para permitir el video de carga
+*.mov
