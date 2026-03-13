@@ -44,7 +44,7 @@ function RudasaurioVideo({
   if (!mostrar) return null
 
   const videos: Record<string, string> = {
-    intro: '/assets/Rudasaurio/Web%20Ellis.mp4',
+    intro: '/assets/Rudasaurio/Rudasaurio%20Woop.mp4',
     celebrating: '/assets/Rudasaurio/Rudasaurio%20Celebrating%20Lesson%20completed.mp4',
     woop: '/assets/Rudasaurio/Rudasaurio%20Woop.mp4',
     error: '/assets/Rudasaurio/Rudasaurio%20Error.mp4',
