@@ -43,12 +43,12 @@ function RudasaurioVideo({
 
   if (!mostrar) return null
 
-  const imagenes: Record<string, string> = {
-    intro: '/assets/Rudasaurio/Web%20Ellis.png',
-    celebrating: '/assets/Rudasaurio/Rudasaurio%20Celebrating%20Lesson%20completed.png',
-    woop: '/assets/Rudasaurio/Rudasaurio%20Woop.png',
-    error: '/assets/Rudasaurio/Rudasaurio%20Error.png',
-    molesto: '/assets/Rudasaurio/RudaSaurio%20Molesto.png',
+  const videos: Record<string, string> = {
+    intro: '/assets/Rudasaurio/Web%20Ellis.mp4',
+    celebrating: '/assets/Rudasaurio/Rudasaurio%20Celebrating%20Lesson%20completed.mp4',
+    woop: '/assets/Rudasaurio/Rudasaurio%20Woop.mp4',
+    error: '/assets/Rudasaurio/Rudasaurio%20Error.mp4',
+    molesto: '/assets/Rudasaurio/RudaSaurio%20Molesto%20.mp4',
   }
 
   const mensajes: Record<string, string> = {
@@ -62,10 +62,12 @@ function RudasaurioVideo({
   return (
     <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 animate-fade-in">
       <div className="bg-gray-900 rounded-3xl p-8 max-w-md text-center border-2 border-ruda-gold">
-        <img 
-          src={imagenes[tipo]} 
-          alt="Rudasaurio" 
-          className="w-48 h-48 mx-auto mb-4 object-contain animate-bounce"
+        <video 
+          src={videos[tipo]} 
+          autoPlay 
+          muted 
+          loop
+          className="w-48 h-48 mx-auto mb-4 object-contain rounded-xl"
         />
         <p className="text-xl font-bold text-white mb-4">{mensajes[tipo]}</p>
         
@@ -149,7 +151,7 @@ function ContenidoLeccion({
         tipo: 'info',
         titulo: '¿Quién fue William Webb Ellis?',
         texto: 'En 1823, durante un partido de fútbol en Rugby, Inglaterra, un joven levantó la pelota y corrió con ella. Ese acto rebelde dio origen al rugby.',
-        imagen: '/assets/Rudasaurio/Web%20Ellis.png'
+        imagen: '/assets/Rudasaurio/Web%20Ellis.mp4'
       },
       {
         tipo: 'quiz',
@@ -339,10 +341,12 @@ function ContenidoLeccion({
         {pasoActual.tipo === 'info' && (
           <div className="text-center">
             {pasoActual.imagen && (
-              <img 
+              <video 
                 src={pasoActual.imagen} 
-                alt="Rudasaurio" 
-                className="w-32 h-32 mx-auto mb-4 object-contain"
+                autoPlay 
+                muted 
+                loop
+                className="w-32 h-32 mx-auto mb-4 object-contain rounded-lg"
               />
             )}
             <h2 className="text-2xl font-bold text-ruda-gold mb-4">{pasoActual.titulo}</h2>
@@ -469,10 +473,12 @@ export default function Nivel1Gamificado() {
             {/* Título */}
             <div className="text-center mb-8">
               <div className="flex items-center justify-center gap-4 mb-4">
-                <img 
-                  src="/assets/Rudasaurio/Rudasaurio%20Woop.png" 
-                  alt="Rudasaurio" 
-                  className="w-16 h-16 object-contain"
+                <video 
+                  src="/assets/Rudasaurio/Rudasaurio%20Woop.mp4" 
+                  autoPlay 
+                  muted 
+                  loop
+                  className="w-16 h-16 object-contain rounded-lg"
                 />
                 <div>
                   <h1 className="text-3xl font-black text-white">¡Aprende con Rudasaurio!</h1>
