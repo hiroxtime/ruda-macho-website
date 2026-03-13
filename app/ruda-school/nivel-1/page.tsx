@@ -37,7 +37,7 @@ function RudasaurioVideo({
     const timer = setTimeout(() => {
       setMostrar(false)
       onComplete?.()
-    }, 5000) // 5 segundos (duración del video)
+    }, 6000) // 6 segundos para que se aprecie mejor
     return () => clearTimeout(timer)
   }, [onComplete])
 
