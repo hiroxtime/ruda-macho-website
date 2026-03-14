@@ -32,16 +32,7 @@ function RudasaurioVideo({
   onComplete?: () => void 
 }) {
   const [mostrar, setMostrar] = useState(true)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setMostrar(false)
-      onComplete?.()
-    }, 8000) // 8 segundos para móvil
-    return () => clearTimeout(timer)
-  }, [onComplete])
-
-  if (!mostrar) return null
+  const [videoTerminado, setVideoTerminado] = useState(false)
 
   const videos: Record<string, string> = {
     intro: '/assets/Rudasaurio/Rudasaurio%20Woop.mp4',
@@ -66,19 +57,24 @@ function RudasaurioVideo({
           src={videos[tipo]} 
           autoPlay 
           playsInline
+          onEnded={() => {
+            setVideoTerminado(true)
+          }}
           className="w-80 h-80 mx-auto mb-4 object-contain rounded-xl"
         />
         <p className="text-xl font-bold text-white mb-4">{mensajes[tipo]}</p>
         
-        <button 
-          onClick={() => {
-            setMostrar(false)
-            onComplete?.()
-          }}
-          className="bg-ruda-gold text-ruda-black px-6 py-2 rounded-full font-bold hover:bg-yellow-400"
-        >
-          Continuar →
-        </button>
+        {videoTerminado && (
+          <button 
+            onClick={() => {
+              setMostrar(false)
+              onComplete?.()
+            }}
+            className="bg-ruda-gold text-ruda-black px-6 py-2 rounded-full font-bold hover:bg-yellow-400"
+          >
+            Continuar →
+          </button>
+        )}
       </div>
     </div>
   )
@@ -125,6 +121,42 @@ function LeccionCard({
         <h3 className="font-bold text-white">{leccion.titulo}</h3>
         <p className="text-sm text-gray-400">{leccion.duracion} • {leccion.xp} XP</p>
       </div>
+    </div>
+  )
+}
+
+// Componente para pasos de información con video
+function InfoPaso({ 
+  pasoActual, 
+  onNext 
+}: { 
+  pasoActual: any
+  onNext: () => void 
+}) {
+  const [videoTerminado, setVideoTerminado] = useState(!pasoActual.imagen)
+
+  return (
+    <div className="text-center">
+      {pasoActual.imagen && (
+        <video 
+          src={pasoActual.imagen} 
+          autoPlay 
+          playsInline
+          onEnded={() => setVideoTerminado(true)}
+          className="w-48 h-48 mx-auto mb-4 object-contain rounded-lg"
+        />
+      )}
+      <h2 className="text-2xl font-bold text-ruda-gold mb-4">{pasoActual.titulo}</h2>
+      <p className="text-lg text-gray-300 mb-6">{pasoActual.texto}</p>
+      
+      {videoTerminado && (
+        <button
+          onClick={onNext}
+          className="bg-ruda-green text-white px-8 py-3 rounded-xl font-bold hover:bg-ruda-dark-green"
+        >
+          Continuar →
+        </button>
+      )}
     </div>
   )
 }
@@ -338,31 +370,16 @@ function ContenidoLeccion({
       {/* Contenido */}
       <div className="bg-gray-800 rounded-2xl p-6 border border-white/10">
         {pasoActual.tipo === 'info' && (
-          <div className="text-center">
-            {pasoActual.imagen && (
-              <video 
-                src={pasoActual.imagen} 
-                autoPlay 
-                playsInline
-                className="w-48 h-48 mx-auto mb-4 object-contain rounded-lg"
-              />
-            )}
-            <h2 className="text-2xl font-bold text-ruda-gold mb-4">{pasoActual.titulo}</h2>
-            <p className="text-lg text-gray-300 mb-6">{pasoActual.texto}</p>
-            
-            <button
-              onClick={() => {
-                if (paso < pasos.length - 1) {
-                  setPaso(paso + 1)
-                } else {
-                  onComplete()
-                }
-              }}
-              className="bg-ruda-green text-white px-8 py-3 rounded-xl font-bold hover:bg-ruda-dark-green"
-            >
-              Continuar →
-            </button>
-          </div>
+          <InfoPaso 
+            pasoActual={pasoActual} 
+            onNext={() => {
+              if (paso < pasos.length - 1) {
+                setPaso(paso + 1)
+              } else {
+                onComplete()
+              }
+            }}
+          />
         )}
 
         {pasoActual.tipo === 'quiz' && (
