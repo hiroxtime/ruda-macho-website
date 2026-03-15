@@ -5,6 +5,7 @@ import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
+import QRAsistencia from '@/components/QRAsistencia'
 
 export default function Perfil() {
   const { user, perfil, loading, signOut } = useAuth()
@@ -28,6 +29,26 @@ export default function Perfil() {
   useEffect(() => {
     setLocalPerfil(perfil)
   }, [perfil])
+
+  // Generar QR token si no existe
+  useEffect(() => {
+    const generarQRToken = async () => {
+      if (!user || !localPerfil || localPerfil.qr_token) return
+      
+      const { data, error } = await supabase
+        .from('perfiles')
+        .update({ qr_token: crypto.randomUUID() })
+        .eq('id', user.id)
+        .select('qr_token')
+        .single()
+      
+      if (data && !error) {
+        setLocalPerfil({ ...localPerfil, qr_token: data.qr_token })
+      }
+    }
+    
+    generarQRToken()
+  }, [user, localPerfil])
 
   // Cargar ahijados si es madrina
   useEffect(() => {
@@ -377,6 +398,32 @@ export default function Perfil() {
       {/* Contenido */}
       <div className="max-w-4xl mx-auto px-4 pb-12 space-y-4">
         
+        {/* QR de Asistencia */}
+        <div className="bg-gradient-to-r from-ruda-green/20 to-ruda-dark-green/20 rounded-2xl border border-ruda-green/30 overflow-hidden mb-4">
+          <div className="p-6">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 bg-ruda-green rounded-xl flex items-center justify-center text-2xl">
+                📱
+              </div>
+              <div>
+                <h2 className="text-xl font-black text-white">Tu Código QR</h2>
+                <p className="text-ruda-gold text-sm">Mostralo al entrar al entrenamiento</p>
+              </div>
+            </div>
+            
+            {localPerfil?.qr_token ? (
+              <QRAsistencia 
+                qrToken={localPerfil.qr_token} 
+                nombre={localPerfil.nombre_completo || 'Jugador'} 
+              />
+            ) : (
+              <div className="bg-white/10 rounded-xl p-6 text-center">
+                <p className="text-gray-400">Generando tu código QR...</p>
+              </div>
+            )}
+          </div>
+        </div>
+
         {/* Info de contacto */}
         <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-6 border border-white/10">
           <div className="grid md:grid-cols-2 gap-6">
@@ -737,6 +784,25 @@ export default function Perfil() {
             </div>
           )}
         </div>
+
+        {/* Admin Link - Solo para admins/moderadores */}
+        {localPerfil?.rol && ['admin', 'moderador'].includes(localPerfil.rol) && (
+          <Link 
+            href="/admin/asistencia"
+            className="block bg-gradient-to-r from-purple-900/20 to-pink-900/20 rounded-2xl border border-purple-500/30 p-6 mb-4 hover:bg-purple-500/10 transition-colors"
+          >
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-purple-500/30 rounded-xl flex items-center justify-center text-2xl">
+                🛡️
+              </div>
+              <div className="flex-1">
+                <h2 className="text-xl font-black text-white">Panel de Admin</h2>
+                <p className="text-purple-400 text-sm">Control de asistencia y gestión del club</p>
+              </div>
+              <span className="text-2xl text-white">→</span>
+            </div>
+          </Link>
+        )}
 
       </div>
     </div>

@@ -18,6 +18,8 @@ interface Perfil {
   avatar_url?: string
   es_madrina?: boolean
   perfil_completo?: boolean
+  rol?: 'jugador' | 'moderador' | 'tesorero' | 'admin'
+  qr_token?: string
 }
 
 interface PerfilMadrina {
