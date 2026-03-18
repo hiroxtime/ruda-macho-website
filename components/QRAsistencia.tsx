@@ -1,7 +1,6 @@
 'use client'
 
 import { QRCodeSVG } from 'qrcode.react'
-import { useState } from 'react'
 
 interface QRAsistenciaProps {
   qrToken: string
@@ -9,20 +8,15 @@ interface QRAsistenciaProps {
 }
 
 export default function QRAsistencia({ qrToken, nombre }: QRAsistenciaProps) {
-  const [expandido, setExpandido] = useState(false)
-
   return (
     <div className="bg-white rounded-2xl p-6 shadow-xl text-center">
       <h3 className="text-ruda-black font-black text-xl mb-4">Tu Pase de Asistencia</h3>
       
-      <div 
-        className={`flex justify-center transition-all duration-300 ${expandido ? 'scale-110' : 'scale-100'}`}
-        onClick={() => setExpandido(!expandido)}
-      >
-        <div className="p-4 bg-white border-4 border-ruda-green rounded-xl cursor-pointer">
+      <div className="flex justify-center">
+        <div className="p-4 bg-white border-4 border-ruda-green rounded-xl">
           <QRCodeSVG 
             value={qrToken} 
-            size={expandido ? 200 : 150}
+            size={200}
             level="H"
             includeMargin={true}
           />

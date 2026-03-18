@@ -7,12 +7,6 @@ import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import QRScanner from '@/components/QRScanner'
 
-// Horarios de entrenamiento
-const HORARIOS_ENTRENAMIENTO = {
-  martes: { inicio: '20:30', fin: '22:30' },
-  jueves: { inicio: '20:30', fin: '22:30' },
-}
-
 export default function AdminAsistencia() {
   const { user, perfil, loading } = useAuth()
   const router = useRouter()
@@ -22,7 +16,6 @@ export default function AdminAsistencia() {
   const [mensaje, setMensaje] = useState('')
   const [esAdmin, setEsAdmin] = useState(false)
   
-  // Estado para registro rápido
   const [mostrarRegistroRapido, setMostrarRegistroRapido] = useState(false)
   const [nuevoJugador, setNuevoJugador] = useState({
     nombre: '',
@@ -31,21 +24,18 @@ export default function AdminAsistencia() {
   })
   const [guardandoNuevo, setGuardandoNuevo] = useState(false)
 
-  // Verificar si es admin/moderador
   useEffect(() => {
     if (perfil?.rol && ['admin', 'moderador'].includes(perfil.rol)) {
       setEsAdmin(true)
     }
   }, [perfil])
 
-  // Redirigir si no está autenticado
   useEffect(() => {
     if (!loading && !user) {
       router.push('/login')
     }
   }, [loading, user, router])
 
-  // Verificar acceso de admin
   useEffect(() => {
     if (!loading && user && !esAdmin) {
       setMensaje('No tenés permisos de administrador.')
@@ -57,7 +47,6 @@ export default function AdminAsistencia() {
     setMensaje('Buscando jugador...')
     
     try {
-      // Buscar jugador por QR token
       const { data: jugador, error } = await supabase
         .from('perfiles')
         .select('*')
@@ -66,7 +55,6 @@ export default function AdminAsistencia() {
       
       if (error || !jugador) {
         setMensaje('QR no válido o jugador no encontrado.')
-        // Ofrecer registro rápido
         setMostrarRegistroRapido(true)
         return
       }
@@ -76,17 +64,6 @@ export default function AdminAsistencia() {
     } catch (err) {
       setMensaje('Error al buscar jugador.')
     }
-  }
-
-  const calcularEstadoLlegada = (): 'a tiempo' | 'tarde' => {
-    const ahora = new Date()
-    const horaActual = ahora.getHours() * 60 + ahora.getMinutes() // minutos desde medianoche
-    const horaInicio = 20 * 60 + 30 // 20:30 = 1230 minutos
-    
-    // Si llega después de 20:45 (15 min de tolerancia), es tarde
-    const horaLimite = horaInicio + 15
-    
-    return horaActual > horaLimite ? 'tarde' : 'a tiempo'
   }
 
   const registrarAsistencia = async (estado: 'a tiempo' | 'tarde') => {
@@ -112,7 +89,6 @@ export default function AdminAsistencia() {
       setMensaje(`✅ Asistencia registrada: ${jugadorEncontrado.nombre_completo} - ${estado.toUpperCase()}`)
       setJugadorEncontrado(null)
       
-      // Resetear después de 3 segundos
       setTimeout(() => {
         setMensaje('')
         setEscaneando(true)
@@ -142,21 +118,7 @@ export default function AdminAsistencia() {
       
       if (error) throw error
       
-      // También registrar asistencia para este nuevo
-      if (data && data[0]) {
-        await supabase
-          .from('asistencias')
-          .insert({
-            jugador_id: data[0].id,
-            fecha: new Date().toISOString().split('T')[0],
-            tipo: 'entrenamiento',
-            estado_llegada: calcularEstadoLlegada(),
-            registrado_por: user.id,
-            notas: `Registro rápido - ${nuevoJugador.nombre}`
-          })
-      }
-      
-      setMensaje(`✅ ${nuevoJugador.nombre} registrado y asistencia marcada.`)
+      setMensaje(`✅ ${nuevoJugador.nombre} registrado.`)
       setMostrarRegistroRapido(false)
       setNuevoJugador({ nombre: '', email: '', telefono: '' })
       
@@ -185,7 +147,7 @@ export default function AdminAsistencia() {
         <div className="max-w-md mx-auto text-center">
           <div className="text-6xl mb-4">🚫</div>
           <h1 className="text-2xl font-black text-white mb-4">Acceso Denegado</h1>
-          <p className="text-gray-400 mb-8">{mensaje || 'Necesitás permisos de administrador para acceder a esta página.'}</p>
+          <p className="text-gray-400 mb-8">{mensaje || 'Necesitás permisos de administrador.'}</p>
           <Link href="/perfil" className="text-ruda-gold hover:underline">
             Volver al perfil →
           </Link>
@@ -196,25 +158,22 @@ export default function AdminAsistencia() {
 
   return (
     <div className="min-h-screen bg-ruda-black">
-      {/* Header */}
       <div className="bg-ruda-green py-6 px-4">
         <div className="max-w-md mx-auto flex items-center justify-between">
-          <Link href="/perfil" className="text-white font-bold">
-            ← Volver
-          </Link>
+          <Link href="/perfil" className="text-white font-bold">← Volver</Link>
           <h1 className="text-xl font-black text-white">Control de Asistencia</h1>
           <div className="w-8" />
         </div>
       </div>
 
       <div className="max-w-md mx-auto px-4 py-8">
-        {/* Info del día */}
         <div className="bg-white/10 rounded-xl p-4 mb-6 text-center">
-          <p className="text-ruda-gold font-bold">{new Date().toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long' })}</p>
+          <p className="text-ruda-gold font-bold">
+            {new Date().toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long' })}
+          </p>
           <p className="text-white text-sm">Entrenamiento: 20:30 - 22:30</p>
         </div>
 
-        {/* Mensaje */}
         {mensaje && (
           <div className={`rounded-xl p-4 mb-6 text-center font-bold ${
             mensaje.includes('✅') ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'
@@ -223,7 +182,6 @@ export default function AdminAsistencia() {
           </div>
         )}
 
-        {/* Scanner o Resultado */}
         {!jugadorEncontrado && !mostrarRegistroRapido && (
           <div className="bg-white rounded-2xl p-6 shadow-xl">
             <h2 className="text-ruda-black font-black text-xl mb-4 text-center">
@@ -247,7 +205,6 @@ export default function AdminAsistencia() {
           </div>
         )}
 
-        {/* Jugador encontrado - Confirmar asistencia */}
         {jugadorEncontrado && (
           <div className="bg-white rounded-2xl p-6 shadow-xl">
             <div className="text-center mb-6">
@@ -293,13 +250,12 @@ export default function AdminAsistencia() {
           </div>
         )}
 
-        {/* Registro rápido */}
         {mostrarRegistroRapido && (
           <div className="bg-white rounded-2xl p-6 shadow-xl">
             <div className="text-center mb-6">
               <div className="text-4xl mb-2">👤</div>
               <h2 className="text-ruda-black font-black text-xl">Registro Rápido</h2>
-              <p className="text-gray-500 text-sm">El jugador no tiene cuenta. Registralo para marcar su asistencia.</p>
+              <p className="text-gray-500 text-sm">El jugador no tiene cuenta.</p>
             </div>
 
             <div className="space-y-4">

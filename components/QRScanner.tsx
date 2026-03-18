@@ -10,10 +10,9 @@ interface QRScannerProps {
 
 export default function QRScanner({ onScan, onError }: QRScannerProps) {
   const scannerRef = useRef<Html5QrcodeScanner | null>(null)
-  const [isScanning, setIsScanning] = useState(false)
+  const [isReady, setIsReady] = useState(false)
 
   useEffect(() => {
-    // Inicializar scanner
     scannerRef.current = new Html5QrcodeScanner(
       'qr-reader',
       {
@@ -27,18 +26,16 @@ export default function QRScanner({ onScan, onError }: QRScannerProps) {
     scannerRef.current.render(
       (decodedText) => {
         onScan(decodedText)
-        // Detener scanner después de escanear
         scannerRef.current?.clear()
-        setIsScanning(false)
       },
       (errorMessage) => {
-        // Ignorar errores de "QR code not found" (es normal mientras busca)
         if (!errorMessage.includes('NotFoundException')) {
           onError?.(errorMessage)
         }
       }
     )
-    setIsScanning(true)
+
+    setIsReady(true)
 
     return () => {
       scannerRef.current?.clear().catch(() => {})
@@ -48,9 +45,9 @@ export default function QRScanner({ onScan, onError }: QRScannerProps) {
   return (
     <div className="w-full">
       <div id="qr-reader" className="rounded-xl overflow-hidden" />
-      {!isScanning && (
+      {!isReady && (
         <div className="text-center mt-4">
-          <p className="text-gray-400 text-sm">Escaneando...</p>
+          <p className="text-gray-400 text-sm">Iniciando cámara...</p>
         </div>
       )}
     </div>
