@@ -341,31 +341,48 @@ Use esta lista para revisar la seguridad del sistema:
 
 ## 📋 Dependencias y Vulnerabilidades
 
+### Auditoría de Seguridad (Abril 2026)
+
+**Estado actual:** 4 vulnerabilidades de severidad "high" en dependencias.
+
+| Dependencia | Severidad | Tipo | Impacto Real |
+|-------------|-----------|------|--------------|
+| minimatch (x3) | High | ReDoS | Solo desarrollo (ESLint), no afecta producción |
+| Next.js 14.2.35 | High | DoS | Bajo riesgo para el sitio actual |
+
+**Por qué no se actualizaron:**
+
+1. **minimatch**: Dependencia de desarrollo usada por ESLint. No se ejecuta en producción.
+
+2. **Next.js 16**: Intentamos actualizar pero rompe el build debido a breaking changes en API routes con `output: export`. La versión actual (14.2.35) funciona correctamente.
+
+**Mitigación:**
+- Las vulnerabilidades de DoS requieren configuraciones específicas que el sitio no usa
+- El tráfico del sitio es bajo/medio, el riesgo es mínimo
+- Si el sitio crece, reconsiderar actualización a Next.js 16
+
 ### Auditoría de Dependencias
 
 ```bash
 # Ejecutar auditoría
 npm audit
 
-# Resultado esperado: 0 vulnerabilidades críticas
+# Resultado esperado: 4 high vulnerabilities (bajo impacto)
 ```
 
 ### Dependencias Principales
 
-| Paquete | Versión | Vulnerabilidades |
-|---------|---------|------------------|
-| next | 14.0.4 | ✅ Ninguna |
-| react | 18.x | ✅ Ninguna |
-| @supabase/supabase-js | 2.x | ✅ Ninguna |
+| Paquete | Versión | Estado |
+|---------|---------|--------|
+| next | 14.2.35 | ✅ Funcional |
+| react | 18.x | ✅ Sin vulnerabilidades |
+| @supabase/supabase-js | 2.x | ✅ Sin vulnerabilidades |
 
 ### Actualización de Dependencias
 
 ```bash
 # Verificar actualizaciones
 npm outdated
-
-# Actualizar dependencias
-npm update
 
 # Actualizar dependencias de seguridad
 npm audit fix
