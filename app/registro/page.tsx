@@ -137,76 +137,76 @@ export default function Registro() {
           <div className="grid md:grid-cols-2 gap-6">
             {/* Nombre */}
             <div className="col-span-2">
-              <label className="block text-ruda-black font-bold mb-2">Nombre Completo *</label>
+              <label className="block text-gray-900 font-bold mb-2">Nombre Completo *</label>
               <input
                 type="text"
                 name="nombre_completo"
                 value={formData.nombre_completo}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green text-gray-900 bg-white"
                 placeholder="Tu nombre y apellido"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label className="block text-ruda-black font-bold mb-2">Email *</label>
+              <label className="block text-gray-900 font-bold mb-2">Email *</label>
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green text-gray-900 bg-white"
                 placeholder="tu@email.com"
               />
             </div>
 
             {/* Teléfono */}
             <div>
-              <label className="block text-ruda-black font-bold mb-2">Teléfono</label>
+              <label className="block text-gray-900 font-bold mb-2">Teléfono</label>
               <input
                 type="tel"
                 name="telefono"
                 value={formData.telefono}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green text-gray-900 bg-white"
                 placeholder="+54 9 11 1234-5678"
               />
             </div>
 
             {/* Contraseña */}
             <div>
-              <label className="block text-ruda-black font-bold mb-2">Contraseña *</label>
+              <label className="block text-gray-900 font-bold mb-2">Contraseña *</label>
               <input
                 type="password"
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green text-gray-900 bg-white"
                 placeholder="Mínimo 6 caracteres"
               />
             </div>
 
             {/* Confirmar Contraseña */}
             <div>
-              <label className="block text-ruda-black font-bold mb-2">Confirmar Contraseña *</label>
+              <label className="block text-gray-900 font-bold mb-2">Confirmar Contraseña *</label>
               <input
                 type="password"
                 name="confirmPassword"
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green text-gray-900 bg-white"
                 placeholder="Repetí la contraseña"
               />
             </div>
 
             {/* Tipo de Jugador */}
             <div className="col-span-2">
-              <label className="block text-ruda-black font-bold mb-2">Tipo de Miembro *</label>
+              <label className="block text-gray-900 font-bold mb-2">Tipo de Miembro *</label>
               <div className="grid md:grid-cols-2 gap-4">
                 <label className={`flex items-center p-4 border-2 rounded-lg cursor-pointer transition-colors ${
                   formData.tipo_jugador === 'activo' ? 'border-ruda-green bg-ruda-green/10' : 'border-gray-300'
@@ -221,7 +221,7 @@ export default function Registro() {
                   />
                   <div className="text-center w-full">
                     <div className="text-3xl mb-2">🏃</div>
-                    <div className="font-bold text-ruda-black">Jugador Activo</div>
+                    <div className="font-bold text-gray-900">Jugador Activo</div>
                     <div className="text-sm text-gray-600">Pago cuota completa, entreno y juego</div>
                   </div>
                 </label>
@@ -239,7 +239,7 @@ export default function Registro() {
                   />
                   <div className="text-center w-full">
                     <div className="text-3xl mb-2">🤝</div>
-                    <div className="font-bold text-ruda-black">Miembro Asociado</div>
+                    <div className="font-bold text-gray-900">Miembro Asociado</div>
                     <div className="text-sm text-gray-600">Pago mitad, apoyo al club, no juego</div>
                   </div>
                 </label>
@@ -248,12 +248,12 @@ export default function Registro() {
 
             {/* Posición */}
             <div>
-              <label className="block text-ruda-black font-bold mb-2">Posición Preferida</label>
+              <label className="block text-gray-900 font-bold mb-2">Posición Preferida</label>
               <select
                 name="posicion_preferida"
                 value={formData.posicion_preferida}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green text-gray-900 bg-white"
               >
                 <option value="">Seleccioná tu posición</option>
                 {posiciones.map(pos => (
@@ -264,7 +264,7 @@ export default function Registro() {
 
             {/* Número de camiseta */}
             <div>
-              <label className="block text-ruda-black font-bold mb-2">N° Camiseta</label>
+              <label className="block text-gray-900 font-bold mb-2">N° Camiseta</label>
               <input
                 type="number"
                 name="numero_camiseta"
@@ -272,33 +272,33 @@ export default function Registro() {
                 onChange={handleChange}
                 min="1"
                 max="99"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green text-gray-900 bg-white"
                 placeholder="Ej: 10"
               />
             </div>
 
             {/* Fecha inicio */}
             <div>
-              <label className="block text-ruda-black font-bold mb-2">¿Cuándo empezaste en Ruda? *</label>
+              <label className="block text-gray-900 font-bold mb-2">¿Cuándo empezaste en Ruda? *</label>
               <input
                 type="date"
                 name="fecha_inicio_ruda"
                 value={formData.fecha_inicio_ruda}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green text-gray-900 bg-white"
               />
             </div>
 
             {/* Fecha nacimiento */}
             <div>
-              <label className="block text-ruda-black font-bold mb-2">Fecha de Nacimiento</label>
+              <label className="block text-gray-900 font-bold mb-2">Fecha de Nacimiento</label>
               <input
                 type="date"
                 name="fecha_nacimiento"
                 value={formData.fecha_nacimiento}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green text-gray-900 bg-white"
               />
             </div>
           </div>

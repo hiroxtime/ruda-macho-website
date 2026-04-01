@@ -314,11 +314,6 @@ export default function StreamingPage() {
                       🔴 EN VIVO
                     </span>
                   )}
-                  {item.estado === 'proximamente' && (
-                    <span className="absolute top-2 left-2 bg-yellow-500 text-black text-xs px-2 py-1 rounded font-bold">
-                      📅 PRÓXIMAMENTE
-                    </span>
-                  )}
                   {item.estado === 'grabado' && (
                     <span className="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded font-bold">
                       ✅ DISPONIBLE

@@ -51,25 +51,25 @@ export default function Login() {
 
           <div className="space-y-6">
             <div>
-              <label className="block text-ruda-black font-bold mb-2">Email</label>
+              <label className="block text-gray-900 font-bold mb-2">Email</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green text-gray-900 bg-white"
                 placeholder="tu@email.com"
               />
             </div>
 
             <div>
-              <label className="block text-ruda-black font-bold mb-2">Contraseña</label>
+              <label className="block text-gray-900 font-bold mb-2">Contraseña</label>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-ruda-green text-gray-900 bg-white"
                 placeholder="••••••••"
               />
             </div>
