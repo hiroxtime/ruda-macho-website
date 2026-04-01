@@ -71,7 +71,6 @@ Usuario → HTTPS → Next.js → Supabase Client → PostgreSQL (RLS)
 | Método | Implementación | Estado |
 |--------|----------------|--------|
 | Email/Password | Supabase Auth | ✅ Activo |
-| Google OAuth | Supabase Auth | ✅ Activo |
 | Magic Link | ~~Supabase Auth~~ | ❌ Deshabilitado |
 
 ### Política de Contraseñas

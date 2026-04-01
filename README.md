@@ -51,7 +51,7 @@ Plataforma web completa para **Ruda Macho Rugby Club**, el primer club de rugby 
 - 📞 **Contacto** - Ubicación con Google Maps
 
 ### Sistema de Usuarios
-- 🔐 **Autenticación** - Email/contraseña + Google OAuth
+- 🔐 **Autenticación** - Email/contraseña
 - 👤 **Perfiles** - Foto, posición, categoría, contacto
 - 📊 **Estadísticas** - Progreso en Ruda School
 - 🎫 **Sistema de asistencia** - QR para entrenamientos
