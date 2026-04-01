@@ -66,28 +66,8 @@ const videosClub = [
 ]
 
 // Contenido de streaming en vivo
-const contenido = [
-  {
-    id: '2',
-    titulo: 'Entrevista Radio Ruda',
-    categoria: 'radio',
-    estado: 'grabado',
-    duracion: '45:30',
-    fecha: '2026-03-25',
-    imagen: '/assets/carrusel/foto-ruda-1.png',
-    descripcion: 'Entrevista en Radio Asamblea',
-  },
-  {
-    id: '3',
-    titulo: 'Podcast: Historia del Rugby',
-    categoria: 'podcasts',
-    estado: 'grabado',
-    duracion: '1:20:00',
-    fecha: '2026-03-20',
-    imagen: '/assets/carrusel/foto-ruda-2.png',
-    descripcion: 'Capítulo 1: Los orígenes',
-  },
-]
+// TODO: Agregar contenido real cuando esté disponible
+const contenido = []
 
 export default function StreamingPage() {
   const [categoriaActiva, setCategoriaActiva] = useState<string | null>(null)
@@ -288,6 +268,18 @@ export default function StreamingPage() {
       )}
 
       {/* Otro contenido */}
+      {(!categoriaActiva || (categoriaActiva !== 'club')) && contenidoFiltrado.length === 0 && (
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="bg-gray-900 rounded-lg p-8 text-center">
+            <div className="text-4xl mb-4">🎬</div>
+            <h3 className="text-xl font-bold mb-2">Contenido próximamente</h3>
+            <p className="text-gray-400">
+              Estamos trabajando para traerte más contenido. Mientras tanto, explorá nuestros videos del club y partidos internacionales.
+            </p>
+          </div>
+        </div>
+      )}
+
       {(!categoriaActiva || (categoriaActiva !== 'club')) && contenidoFiltrado.length > 0 && (
         <div className="max-w-7xl mx-auto px-4 py-4">
           <h3 className="text-xl font-bold mb-4">
