@@ -338,6 +338,77 @@ console.log('Error:', error);
 | Maps embed no funciona | Usar URL de embed, no link corto |
 | RLS error | Agregar política INSERT/UPDATE |
 | GitHub no actualiza | `git push origin main --force` |
+| PWA no actualiza | Network-first en service worker (v2+) |
+| Formularios ilegibles | Forzar `text-gray-900 bg-white` en inputs |
+| SQL con datos personales | Eliminar del repo + `git filter-branch` |
+
+---
+
+## 📱 PWA (Progressive Web App)
+
+### Service Worker no actualiza cambios
+
+**Síntoma:** PWA instalada no muestra cambios después de deploy.
+
+**Causa:** Service worker con cache-first agresivo.
+
+**Solución:** Usar estrategia network-first para páginas HTML:
+
+```javascript
+// sw.js - Network-first para páginas
+if (event.request.mode === 'navigate') {
+  event.respondWith(
+    fetch(event.request)
+      .then(response => {
+        // Guardar en cache para offline
+        cache.put(event.request, response.clone());
+        return response;
+      })
+      .catch(() => caches.match(event.request))
+  );
+}
+```
+
+**Cache versioning:** Cambiar `CACHE_NAME` para invalidar cache anterior:
+
+```javascript
+const CACHE_NAME = 'ruda-macho-v2'; // Nuevo número = invalida cache anterior
+```
+
+---
+
+## 🔐 Seguridad del Repositorio
+
+### Datos personales en archivos SQL
+
+**Problema:** Nombres de jugadores en archivos SQL commiteados.
+
+**Solución:**
+```bash
+# 1. Eliminar archivos del repo
+git rm --cached supabase/migrations/importar_*.sql
+
+# 2. Actualizar .gitignore
+echo "supabase/migrations/importar_*.sql" >> .gitignore
+
+# 3. Eliminar del historial
+git filter-branch --force --index-filter \
+  "git rm --cached --ignore-unmatch supabase/migrations/importar_*.sql" \
+  --prune-empty --tag-name-filter cat -- --all
+
+# 4. Forzar push
+git push origin main --force
+```
+
+### Claves NEXT_PUBLIC_* en repositorio público
+
+**¿Es seguro?** Sí, por diseño.
+
+- `NEXT_PUBLIC_SUPABASE_URL` → Visible en el navegador, pero protegido por RLS
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` → Clave pública de solo lectura
+- `SUPABASE_SERVICE_ROLE_KEY` → NUNCA commitear, solo en `.env.local`
+
+La seguridad está en las políticas RLS de Supabase, no en ocultar estas claves.
 
 ---
 

@@ -293,7 +293,7 @@ export default function StreamingPage() {
           <h3 className="text-xl font-bold mb-4">
             {categoriaActiva 
               ? categorias.find(c => c.id === categoriaActiva)?.nombre 
-              : 'Próximas transmisiones'}
+              : 'Contenido disponible'}
           </h3>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
