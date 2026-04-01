@@ -10,6 +10,11 @@ build/
 .env
 .env.local
 
+# SQL files with player data (privacy concern)
+*.sql
+!supabase/migrations/*.sql
+supabase/migrations/importar_*.sql
+
 # Logs
 *.log
 npm-debug.log*
