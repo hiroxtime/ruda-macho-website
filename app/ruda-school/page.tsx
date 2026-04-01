@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { Icons } from '@/components/RudaIcons'
 
 // Niveles de Ruda School
 const niveles = [
@@ -12,28 +13,28 @@ const niveles = [
     lecciones: 8,
     xp: 100,
     color: 'from-green-600 to-green-800',
-    icono: '🏉',
+    icon: Icons.rugbyLarge,
     bloqueado: false
   },
   {
     id: 2,
     titulo: 'URBA',
-    descripcion: 'Regulaciones oficiales de la Unión de Rugby Buenos Aires.',
-    lecciones: 6,
+    descripcion: 'Reglamento World Rugby 2024 organizado en 6 módulos.',
+    lecciones: 28,
     xp: 150,
     color: 'from-blue-600 to-blue-800',
-    icono: '📋',
-    bloqueado: true
+    icon: Icons.clipboardLarge,
+    bloqueado: false
   },
   {
     id: 3,
     titulo: 'POSICIONES',
-    descripcion: 'Roles, responsabilidades y características de cada posición.',
+    descripcion: 'Forwards y Backs: las 15 posiciones del rugby XV.',
     lecciones: 15,
     xp: 200,
     color: 'from-purple-600 to-purple-800',
-    icono: '👥',
-    bloqueado: true
+    icon: Icons.usersLarge,
+    bloqueado: false
   },
   {
     id: 4,
@@ -42,7 +43,7 @@ const niveles = [
     lecciones: 12,
     xp: 250,
     color: 'from-orange-600 to-orange-800',
-    icono: '💪',
+    icon: Icons.muscleLarge,
     bloqueado: true
   },
   {
@@ -52,7 +53,7 @@ const niveles = [
     lecciones: 10,
     xp: 300,
     color: 'from-red-600 to-red-800',
-    icono: '🧠',
+    icon: Icons.brainLarge,
     bloqueado: true
   },
   {
@@ -62,17 +63,17 @@ const niveles = [
     lecciones: 8,
     xp: 350,
     color: 'from-yellow-600 to-yellow-800',
-    icono: '⚡',
+    icon: Icons.lightning,
     bloqueado: true
   }
 ]
 
 // Badges
 const badges = [
-  { nombre: 'Rookie', icono: '🥉', desc: 'Completaste tu primera lección' },
-  { nombre: 'Jugador', icono: '🥈', desc: 'Terminaste el Nivel 1' },
-  { nombre: 'Veterano', icono: '🥇', desc: 'Completaste 3 niveles' },
-  { nombre: 'Ruda Legend', icono: '🏆', desc: 'Maestría completa' }
+  { nombre: 'Rookie', icon: Icons.medal, desc: 'Completaste tu primera lección', color: 'text-amber-600' },
+  { nombre: 'Jugador', icon: Icons.medal, desc: 'Terminaste el Nivel 1', color: 'text-gray-300' },
+  { nombre: 'Veterano', icon: Icons.medal, desc: 'Completaste 3 niveles', color: 'text-yellow-400' },
+  { nombre: 'Ruda Legend', icon: Icons.trophy, desc: 'Maestría completa', color: 'text-yellow-400' }
 ]
 
 export default function RudaSchool() {
@@ -81,8 +82,8 @@ export default function RudaSchool() {
   const [pdfSeleccionado, setPdfSeleccionado] = useState('xv')
 
   const [seccionesExpandidas, setSeccionesExpandidas] = useState({
-    terreno: true,
-    puntos: true,
+    terreno: false,
+    puntos: false,
     valores: true
   })
 
@@ -94,7 +95,7 @@ export default function RudaSchool() {
   }
 
   return (
-    <div className="min-h-screen bg-ruda-black">
+    <div className="min-h-screen bg-ruda-black dark:bg-gray-900">
       <style>{`
         @keyframes float-card {
           0%, 100% { transform: translateY(0px); }
@@ -125,7 +126,7 @@ export default function RudaSchool() {
 
             <div className="flex items-center space-x-4">
               <div className="hidden sm:flex items-center space-x-2 bg-white/5 rounded-full px-4 py-2">
-                <span className="text-ruda-gold">⚡</span>
+                <span className="text-ruda-gold w-5 h-5">{Icons.lightning}</span>
                 <span className="text-white font-bold">0 XP</span>
               </div>
               <Link href="/" className="text-gray-400 hover:text-white transition-colors">
@@ -165,7 +166,9 @@ export default function RudaSchool() {
         <div className="mb-12 bg-gradient-to-br from-ruda-green/20 to-ruda-dark-green/20 rounded-2xl border border-ruda-green/30 overflow-hidden">
           <div className="p-6 md:p-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-ruda-green rounded-lg flex items-center justify-center text-xl">📚</div>
+              <div className="w-10 h-10 bg-ruda-green rounded-lg flex items-center justify-center text-white">
+                {Icons.book}
+              </div>
               <h2 className="text-2xl font-black text-white">INTRODUCCIÓN OBLIGATORIA</h2>
               <span className="ml-auto bg-ruda-gold/20 text-ruda-gold px-3 py-1 rounded-full text-sm font-bold">Nivel 1</span>
             </div>
@@ -173,14 +176,20 @@ export default function RudaSchool() {
             <div className="prose prose-invert max-w-none">
               <div className="grid md:grid-cols-2 gap-6 text-gray-300">
                 <div>
-                  <h3 className="text-ruda-gold font-bold mb-2">🎯 ¿Qué es el Rugby?</h3>
+                  <h3 className="text-ruda-gold font-bold mb-2 flex items-center gap-2">
+                    <span className="w-5 h-5">{Icons.target}</span>
+                    ¿Qué es el Rugby?
+                  </h3>
                   <p className="text-sm mb-4">
                     Deporte de equipo de contacto con balón ovalado. 
                     <strong className="text-white">No hay pases hacia adelante</strong> — 
                     solo hacia atrás o laterales. El objetivo: apoyar el balón en el try enemigo.
                   </p>
 
-                  <h3 className="text-ruda-gold font-bold mb-2">📊 Sistema de Puntos</h3>
+                  <h3 className="text-ruda-gold font-bold mb-2 flex items-center gap-2">
+                    <span className="w-5 h-5">{Icons.target}</span>
+                    Sistema de Puntos
+                  </h3>
                   <ul className="text-sm space-y-1 list-disc list-inside">
                     <li><strong>Try:</strong> 5 puntos (apoyar en zona de try)</li>
                     <li><strong>Conversión:</strong> 2 puntos (patada tras try)</li>
@@ -189,7 +198,10 @@ export default function RudaSchool() {
                 </div>
 
                 <div>
-                  <h3 className="text-ruda-gold font-bold mb-2">🏉 Posiciones Básicas</h3>
+                  <h3 className="text-ruda-gold font-bold mb-2 flex items-center gap-2">
+                    <span className="w-5 h-5">{Icons.rugby}</span>
+                    Posiciones Básicas
+                  </h3>
                   <ul className="text-sm space-y-1 list-disc list-inside">
                     <li><strong>Delanteros (1-8):</strong> Scrum, line-out, tackle</li>
                     <li><strong>Backs (9-15):</strong> Velocidad, pases, patadas</li>
@@ -197,7 +209,10 @@ export default function RudaSchool() {
                     <li><strong>10 - Apertura:</strong> Toma decisiones</li>
                   </ul>
 
-                  <h3 className="text-ruda-gold font-bold mb-2 mt-4">❌ Reglas Clave</h3>
+                  <h3 className="text-ruda-gold font-bold mb-2 mt-4 flex items-center gap-2">
+                    <span className="w-5 h-5">{Icons.rules}</span>
+                    Reglas Clave
+                  </h3>
                   <ul className="text-sm space-y-1 list-disc list-inside">
                     <li>No pases hacia adelante</li>
                     <li>Tackle solo por debajo de hombros</li>
@@ -208,8 +223,9 @@ export default function RudaSchool() {
               </div>
 
               <div className="mt-6 p-4 bg-ruda-black/50 rounded-xl border border-ruda-gold/30">
-                <p className="text-ruda-gold font-bold text-center">
-                  🏆 "NUESTRA LUCHA ES JUGANDO" — Valores: Integridad, Pasión, Solidaridad, Disciplina, Respeto
+                <p className="text-ruda-gold font-bold text-center flex items-center justify-center gap-2">
+                  <span className="w-5 h-5">{Icons.trophy}</span>
+                  "NUESTRA LUCHA ES JUGANDO" — Valores: Integridad, Pasión, Solidaridad, Disciplina, Respeto
                 </p>
               </div>
 
@@ -218,7 +234,8 @@ export default function RudaSchool() {
                   href="/ruda-school/nivel-1"
                   className="inline-flex items-center gap-2 bg-ruda-gold text-ruda-black px-8 py-4 rounded-full font-black text-lg hover:bg-yellow-400 transition-all hover:scale-105 shadow-lg shadow-ruda-gold/30"
                 >
-                  📚 Comenzar Nivel 1: Fundamentos
+                  <span className="w-5 h-5">{Icons.book}</span>
+                  Comenzar Nivel 1: Fundamentos
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -227,13 +244,13 @@ export default function RudaSchool() {
               </div>
 
               {/* EL TERRENO - La Cancha */}
-              <div className="mt-8 bg-ruda-black/30 rounded-2xl overflow-hidden border border-white/10">
+              <div className="mt-8 bg-ruda-black/30 dark:bg-gray-800/50 rounded-2xl overflow-hidden border border-white/10 dark:border-gray-700">
                 <button
                   onClick={() => toggleSeccion('terreno')}
-                  className="w-full flex items-center justify-between gap-3 p-6 hover:bg-white/5 transition-colors"
+                  className="w-full flex items-center justify-between gap-3 p-6 hover:bg-white/5 dark:hover:bg-gray-700/50 transition-colors"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="text-3xl">🏟️</div>
+                    <div className="w-10 h-10 text-ruda-gold">{Icons.stadium}</div>
                     <h3 className="text-xl font-black text-white">EL TERRENO: La Cancha de Rugby</h3>
                   </div>
                   <span className="text-ruda-gold text-xl">
@@ -255,7 +272,7 @@ export default function RudaSchool() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <h4 className="text-ruda-gold font-bold mb-3">📏 Dimensiones</h4>
-                        <ul className="text-sm space-y-2 text-gray-300">
+                        <ul className="text-sm space-y-2 text-gray-300 dark:text-gray-400">
                           <li>• <strong>Largo:</strong> 100 metros (campo de juego)</li>
                           <li>• <strong>Ancho:</strong> 70 metros</li>
                           <li>• <strong>Zona de Try:</strong> 5-22 metros (donde se anota)</li>
@@ -263,7 +280,7 @@ export default function RudaSchool() {
                         </ul>
 
                         <h4 className="text-ruda-gold font-bold mb-3 mt-6">🎯 Zonas Clave</h4>
-                        <ul className="text-sm space-y-2 text-gray-300">
+                        <ul className="text-sm space-y-2 text-gray-300 dark:text-gray-400">
                           <li>• <strong>Try Zone (5-22m):</strong> ¡Aquí se anota! Apoyar el balón</li>
                           <li>• <strong>Línea de 22:</strong> Kicks de despeje táctico</li>
                           <li>• <strong>Área de Melé (Scrum):</strong> Marcada con línea de 10m</li>
@@ -273,7 +290,7 @@ export default function RudaSchool() {
 
                       <div>
                         <h4 className="text-ruda-gold font-bold mb-3">📐 Estructura Táctica</h4>
-                        <ul className="text-sm space-y-2 text-gray-300">
+                        <ul className="text-sm space-y-2 text-gray-300 dark:text-gray-400">
                           <li>• <strong>Canales:</strong> La cancha se divide en 15 canchas verticales</li>
                           <li>• <strong>1er canal (5m):</strong> Cerca de las bandas</li>
                           <li>• <strong>Canales centrales:</strong> Donde se juega la mayoría del rugby</li>
@@ -281,7 +298,7 @@ export default function RudaSchool() {
                         </ul>
 
                         <h4 className="text-ruda-gold font-bold mb-3 mt-6">💡 Conceptos Clave</h4>
-                        <ul className="text-sm space-y-2 text-gray-300">
+                        <ul className="text-sm space-y-2 text-gray-300 dark:text-gray-400">
                           <li>• <strong>Campo propio vs. Campo rival:</strong> Estrategia territorial</li>
                           <li>• <strong>Las 22:</strong> Zona peligrosa — cuidado con los kicks</li>
                           <li>• <strong>El "túnel":</strong> Espacio para entrar al ruck</li>
@@ -290,7 +307,7 @@ export default function RudaSchool() {
                       </div>
                     </div>
 
-                    <div className="mt-6 p-4 bg-ruda-green/10 rounded-xl border border-ruda-green/30">
+                    <div className="mt-6 p-4 bg-ruda-green/10 dark:bg-ruda-green/20 rounded-xl border border-ruda-green/30">
                       <p className="text-white text-sm">
                         <strong>🧠 Dato mental:</strong> En rugby no hay "cancha propia" fija. 
                         Atacás hacia una try zone y defendés la otra. Cada vez que se anota, 
@@ -302,13 +319,13 @@ export default function RudaSchool() {
               </div>
 
               {/* SISTEMA DE PUNTOS EXPANDIDO */}
-              <div className="mt-8 bg-ruda-black/30 rounded-2xl overflow-hidden border border-white/10">
+              <div className="mt-8 bg-ruda-black/30 dark:bg-gray-800/50 rounded-2xl overflow-hidden border border-white/10 dark:border-gray-700">
                 <button
                   onClick={() => toggleSeccion('puntos')}
-                  className="w-full flex items-center justify-between gap-3 p-6 hover:bg-white/5 transition-colors"
+                  className="w-full flex items-center justify-between gap-3 p-6 hover:bg-white/5 dark:hover:bg-gray-700/50 transition-colors"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="text-3xl">🏆</div>
+                    <div className="w-10 h-10 text-ruda-gold">{Icons.trophy}</div>
                     <h3 className="text-xl font-black text-white">SISTEMA DE PUNTOS DETALLADO</h3>
                   </div>
                   <span className="text-ruda-gold text-xl">
@@ -319,52 +336,52 @@ export default function RudaSchool() {
                 {seccionesExpandidas.puntos && (
                   <div className="px-6 pb-6">
                     <div className="grid md:grid-cols-2 gap-6">
-                      <div className="bg-ruda-black/50 p-4 rounded-xl">
+                      <div className="bg-ruda-black/50 dark:bg-gray-900/50 p-4 rounded-xl">
                         <div className="flex items-center gap-2 mb-2">
                           <span className="text-2xl">🏉</span>
                           <h4 className="text-ruda-gold font-bold">TRY — 5 Puntos</h4>
                         </div>
-                        <p className="text-sm text-gray-300">
+                        <p className="text-sm text-gray-300 dark:text-gray-400">
                           Apoyar el balón con control en la zona de try enemiga. 
                           Es la forma más importante de anotar. Demuestra dominio territorial.
                         </p>
                       </div>
 
-                      <div className="bg-ruda-black/50 p-4 rounded-xl">
+                      <div className="bg-ruda-black/50 dark:bg-gray-900/50 p-4 rounded-xl">
                         <div className="flex items-center gap-2 mb-2">
                           <span className="text-2xl">🦶</span>
                           <h4 className="text-ruda-gold font-bold">CONVERSIÓN — 2 Puntos</h4>
                         </div>
-                        <p className="text-sm text-gray-300">
+                        <p className="text-sm text-gray-300 dark:text-gray-400">
                           Patada entre los palos tras un try. Se patea desde la línea 
                           paralela al punto donde se anotó el try.
                         </p>
                       </div>
 
-                      <div className="bg-ruda-black/50 p-4 rounded-xl">
+                      <div className="bg-ruda-black/50 dark:bg-gray-900/50 p-4 rounded-xl">
                         <div className="flex items-center gap-2 mb-2">
                           <span className="text-2xl">🚩</span>
                           <h4 className="text-ruda-gold font-bold">PENALTY — 3 Puntos</h4>
                         </div>
-                        <p className="text-sm text-gray-300">
+                        <p className="text-sm text-gray-300 dark:text-gray-400">
                           Patada por falta del rival. El equipo puede optar por:
                           patar a los palos, hacer touch (line-out), o scrum.
                         </p>
                       </div>
 
-                      <div className="bg-ruda-black/50 p-4 rounded-xl">
+                      <div className="bg-ruda-black/50 dark:bg-gray-900/50 p-4 rounded-xl">
                         <div className="flex items-center gap-2 mb-2">
                           <span className="text-2xl">⚽</span>
                           <h4 className="text-ruda-gold font-bold">DROP GOAL — 3 Puntos</h4>
                         </div>
-                        <p className="text-sm text-gray-300">
+                        <p className="text-sm text-gray-300 dark:text-gray-400">
                           Patada durante el juego donde el balón toca el suelo antes de ser pateado. 
                           Útil para cerrar partidos apretados.
                         </p>
                       </div>
                     </div>
 
-                    <div className="mt-6 p-4 bg-ruda-gold/10 rounded-xl border border-ruda-gold/30">
+                    <div className="mt-6 p-4 bg-ruda-gold/10 dark:bg-ruda-gold/20 rounded-xl border border-ruda-gold/30">
                       <p className="text-ruda-gold font-bold text-center">
                         💡 Regla de oro: El try vale más que la Patada. Siempre buscar el try primero.
                       </p>
@@ -374,40 +391,40 @@ export default function RudaSchool() {
               </div>
 
               {/* REGLAS FUNDAMENTALES EXPANDIDAS */}
-              <div className="mt-8 bg-ruda-black/30 rounded-2xl p-6 border border-white/10">
+              <div className="mt-8 bg-ruda-black/30 dark:bg-gray-800/50 rounded-2xl p-6 border border-white/10 dark:border-gray-700">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="text-3xl">📜</div>
+                  <div className="w-10 h-10 text-ruda-gold">{Icons.rules}</div>
                   <h3 className="text-xl font-black text-white">REGLAS FUNDAMENTALES</h3>
                 </div>
 
                 <div className="space-y-4">
-                  <div className="bg-red-900/20 border border-red-500/30 p-4 rounded-xl">
+                  <div className="bg-red-900/20 dark:bg-red-900/30 border border-red-500/30 p-4 rounded-xl">
                     <h4 className="text-red-400 font-bold mb-2">❌ NO PASAR HACIA ADELANTE</h4>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 dark:text-gray-400">
                       <strong>La regla más importante:</strong> Nunca podés pasar el balón hacia adelante. 
                       Solo hacia atrás o laterales. Si pasa adelante: scrum para el rival (knock-on).
                     </p>
                   </div>
 
-                  <div className="bg-orange-900/20 border border-orange-500/30 p-4 rounded-xl">
+                  <div className="bg-orange-900/20 dark:bg-orange-900/30 border border-orange-500/30 p-4 rounded-xl">
                     <h4 className="text-orange-400 font-bold mb-2">🤼 TACKLE LEGAL</h4>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 dark:text-gray-400">
                       Solo por debajo de los hombros. No agarrar cuello/cabeza. 
                       No empujar hacia adelante. Después del tackle, soltar inmediatamente.
                     </p>
                   </div>
 
-                  <div className="bg-blue-900/20 border border-blue-500/30 p-4 rounded-xl">
+                  <div className="bg-blue-900/20 dark:bg-blue-900/30 border border-blue-500/30 p-4 rounded-xl">
                     <h4 className="text-blue-400 font-bold mb-2">📏 OFFSIDE (FUERA DE JUEGO)</h4>
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-gray-300 dark:text-gray-400">
                       En defensa: debés estar detrás del último pie del ruck/scrum. 
                       En ataque: no podés adelantarte al que lleva la pelota.
                     </p>
                   </div>
 
-                  <div className="bg-green-900/20 border border-green-500/30 p-4 rounded-xl">
-                    <h4 className="text-green-400 font-bold mb-2">🙋 RESPETO AL ÁRABITRO</h4>
-                    <p className="text-sm text-gray-300">
+                  <div className="bg-green-900/20 dark:bg-green-900/30 border border-green-500/30 p-4 rounded-xl">
+                    <h4 className="text-green-400 font-bold mb-2">🙋 RESPETO AL ÁRBITRO</h4>
+                    <p className="text-sm text-gray-300 dark:text-gray-400">
                       El árbitro se llama "señor" o "señora". No se discuten sus decisiones. 
                       Solo el capitán puede hablar con él/ella.
                     </p>
@@ -416,13 +433,13 @@ export default function RudaSchool() {
               </div>
 
               {/* VALORES DEL RUGBY */}
-              <div className="mt-8 bg-ruda-black/30 rounded-2xl overflow-hidden border border-white/10">
+              <div className="mt-8 bg-ruda-black/30 dark:bg-gray-800/50 rounded-2xl overflow-hidden border border-white/10 dark:border-gray-700">
                 <button
                   onClick={() => toggleSeccion('valores')}
-                  className="w-full flex items-center justify-between gap-3 p-6 hover:bg-white/5 transition-colors"
+                  className="w-full flex items-center justify-between gap-3 p-6 hover:bg-white/5 dark:hover:bg-gray-700/50 transition-colors"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="text-3xl">🤝</div>
+                    <div className="w-10 h-10 text-ruda-gold">{Icons.handshake}</div>
                     <h3 className="text-xl font-black text-white">VALORES DEL RUGBY</h3>
                   </div>
                   <span className="text-ruda-gold text-xl">
@@ -433,17 +450,21 @@ export default function RudaSchool() {
                 {seccionesExpandidas.valores && (
                   <div className="px-6 pb-6">
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                      {['INTEGRIDAD', 'PASIÓN', 'SOLIDARIDAD', 'DISCIPLINA', 'RESPETO'].map((valor, idx) => (
-                        <div key={valor} className="bg-ruda-black/50 p-4 rounded-xl text-center">
-                          <div className="text-2xl mb-2">
-                            {['⚖️', '🔥', '🤗', '📋', '🙏'][idx]}
-                          </div>
-                          <p className="text-ruda-gold font-bold text-sm">{valor}</p>
+                      {[
+                        { nombre: 'INTEGRIDAD', icon: Icons.balance },
+                        { nombre: 'PASIÓN', icon: Icons.heartFire },
+                        { nombre: 'SOLIDARIDAD', icon: Icons.handsTogether },
+                        { nombre: 'DISCIPLINA', icon: Icons.checklist },
+                        { nombre: 'RESPETO', icon: Icons.respect },
+                      ].map((valor, idx) => (
+                        <div key={valor.nombre} className="bg-ruda-black/50 dark:bg-gray-900/50 p-4 rounded-xl text-center">
+                          <div className="mb-2 mx-auto text-ruda-gold">{valor.icon}</div>
+                          <p className="text-ruda-gold font-bold text-sm">{valor.nombre}</p>
                         </div>
                       ))}
                     </div>
 
-                    <p className="mt-4 text-center text-gray-400 text-sm">
+                    <p className="mt-4 text-center text-gray-400 dark:text-gray-300 text-sm">
                       En Ruda Macho vivimos estos valores. No solo se aplican en la cancha, 
                       sino en todo lo que hacemos.
                     </p>
@@ -469,17 +490,17 @@ export default function RudaSchool() {
 
         { /* Stats del jugador */ }
         <div className="grid grid-cols-3 gap-4 mb-12 max-w-2xl mx-auto">
-          <div className="bg-white/5 rounded-xl p-4 text-center border border-white/10">
+          <div className="bg-white/5 dark:bg-gray-800 rounded-xl p-4 text-center border border-white/10 dark:border-gray-700">
             <p className="text-3xl font-black text-ruda-gold">0</p>
-            <p className="text-gray-500 text-sm">Nivel</p>
+            <p className="text-gray-500 dark:text-gray-400 text-sm">Nivel</p>
           </div>
-          <div className="bg-white/5 rounded-xl p-4 text-center border border-white/10">
+          <div className="bg-white/5 dark:bg-gray-800 rounded-xl p-4 text-center border border-white/10 dark:border-gray-700">
             <p className="text-3xl font-black text-ruda-gold">0</p>
-            <p className="text-gray-500 text-sm">Lecciones</p>
+            <p className="text-gray-500 dark:text-gray-400 text-sm">Lecciones</p>
           </div>
-          <div className="bg-white/5 rounded-xl p-4 text-center border border-white/10">
+          <div className="bg-white/5 dark:bg-gray-800 rounded-xl p-4 text-center border border-white/10 dark:border-gray-700">
             <p className="text-3xl font-black text-ruda-gold">0</p>
-            <p className="text-gray-500 text-sm">Badges</p>
+            <p className="text-gray-500 dark:text-gray-400 text-sm">Badges</p>
           </div>
         </div>
 
@@ -504,7 +525,7 @@ export default function RudaSchool() {
                 <div className={`absolute inset-0 bg-gradient-to-br ${nivel.color} opacity-90`} />
                 <div className="relative p-6">
                   <div className="flex items-start justify-between mb-4">
-                    <span className="text-4xl">{nivel.icono}</span>
+                    <span className="text-white">{nivel.icon}</span>
                     <span className="bg-white/20 rounded-full px-3 py-1 text-xs font-bold text-white">
                       {nivel.bloqueado ? '🔒 BLOQUEADO' : '✓ DISPONIBLE'}
                     </span>
@@ -516,7 +537,7 @@ export default function RudaSchool() {
                   <div className="flex items-center justify-between text-white/60 text-sm">
                     <span>{nivel.lecciones} lecciones</span>
                     <span className="flex items-center">
-                      <span className="text-ruda-gold mr-1">⚡</span>
+                      <span className="text-ruda-gold w-4 h-4 mr-1">{Icons.lightning}</span>
                       {nivel.xp} XP
                     </span>
                   </div>
@@ -547,11 +568,11 @@ export default function RudaSchool() {
             {badges.map((badge, index) => (
               <div
                 key={badge.nombre}
-                className="bg-white/5 rounded-xl p-4 text-center border border-white/10 opacity-40"
+                className="bg-white/5 dark:bg-gray-800 rounded-xl p-4 text-center border border-white/10 dark:border-gray-700 opacity-40"
               >
-                <span className="text-4xl mb-2 block">{badge.icono}</span>
+                <span className={`w-10 h-10 mb-2 mx-auto block ${badge.color}`}>{badge.icon}</span>
                 <h4 className="text-white font-bold text-sm mb-1">{badge.nombre}</h4>
-                <p className="text-gray-500 text-xs">{badge.desc}</p>
+                <p className="text-gray-500 dark:text-gray-400 text-xs">{badge.desc}</p>
               </div>
             ))}
           </div>
@@ -564,12 +585,12 @@ export default function RudaSchool() {
             RUGBY CON LUCA
           </h2>
 
-          <p className="text-gray-400 mb-6">
+          <p className="text-gray-400 dark:text-gray-300 mb-6">
             Material complementario de la serie "Rugby con Luca" - aprende rugby de forma divertida con Lucas.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-ruda-gold/50 transition-colors">
+            <div className="bg-white/5 dark:bg-gray-800 rounded-xl p-6 border border-white/10 dark:border-gray-700 hover:border-ruda-gold/50 transition-colors">
               <div className="flex items-start justify-between mb-4">
                 <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -579,7 +600,7 @@ export default function RudaSchool() {
                 <span className="text-ruda-gold text-sm font-bold">PDF</span>
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Rugby con Luca - Dossier</h3>
-              <p className="text-gray-500 text-sm mb-4">Guía completa de rugby XV con los personajes de la serie.</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">Guía completa de rugby XV con los personajes de la serie.</p>
               <div className="flex space-x-2">
                 <button
                   onClick={() => {
@@ -593,14 +614,14 @@ export default function RudaSchool() {
                 <a 
                   href="/assets/Rugby%20con%20Luca%20-%20dossier.pdf" 
                   target="_blank"
-                  className="inline-flex items-center justify-center bg-white/10 text-white py-2 px-4 rounded-lg hover:bg-white/20 transition-colors text-sm"
+                  className="inline-flex items-center justify-center bg-white/10 dark:bg-gray-700 text-white py-2 px-4 rounded-lg hover:bg-white/20 dark:hover:bg-gray-600 transition-colors text-sm"
                 >
                   ↗️ Abrir
                 </a>
               </div>
             </div>
 
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-ruda-gold/50 transition-colors">
+            <div className="bg-white/5 dark:bg-gray-800 rounded-xl p-6 border border-white/10 dark:border-gray-700 hover:border-ruda-gold/50 transition-colors">
               <div className="flex items-start justify-between mb-4">
                 <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -610,7 +631,7 @@ export default function RudaSchool() {
                 <span className="text-ruda-gold text-sm font-bold">PDF</span>
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Rugby con Luca 7s</h3>
-              <p className="text-gray-500 text-sm mb-4">Versión especial de Rugby 7s - más rápido, más dinámico.</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">Versión especial de Rugby 7s - más rápido, más dinámico.</p>
               <div className="flex space-x-2">
                 <button
                   onClick={() => {
@@ -624,7 +645,7 @@ export default function RudaSchool() {
                 <a 
                   href="/assets/Rugby-con-Luca7s-dossier.pdf" 
                   target="_blank"
-                  className="inline-flex items-center justify-center bg-white/10 text-white py-2 px-4 rounded-lg hover:bg-white/20 transition-colors text-sm"
+                  className="inline-flex items-center justify-center bg-white/10 dark:bg-gray-700 text-white py-2 px-4 rounded-lg hover:bg-white/20 dark:hover:bg-gray-600 transition-colors text-sm"
                 >
                   ↗️ Abrir
                 </a>
@@ -634,8 +655,8 @@ export default function RudaSchool() {
 
           { /* Visor PDF Colapsable */ }
           {visorAbierto && (
-            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden animate-fade-in">
-              <div className="bg-ruda-black/50 px-4 py-3 border-b border-white/10 flex items-center justify-between">
+            <div className="bg-white/5 dark:bg-gray-800 rounded-xl border border-white/10 dark:border-gray-700 overflow-hidden animate-fade-in">
+              <div className="bg-ruda-black/50 dark:bg-gray-900 px-4 py-3 border-b border-white/10 dark:border-gray-700 flex items-center justify-between">
                 <span className="text-white font-bold">
                   {pdfSeleccionado === 'xv' ? 'Rugby con Luca - Dossier' : 'Rugby con Luca 7s'}
                 </span>

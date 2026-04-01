@@ -26,3 +26,6 @@ Thumbs.db
 # Large assets (keep local only)
 # *.mp4  # Comentado para permitir el video de carga
 *.mov
+
+# Local Netlify folder
+.netlify

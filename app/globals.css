@@ -8,6 +8,21 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+/* Prevenir scroll horizontal y zoom en toda la página */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  touch-action: pan-x pan-y;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Fix para iOS Safari - forzar GPU rendering en fixed elements */
+header {
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -18,13 +33,26 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-/* Custom Cursor */
-* {
-  cursor: url('/assets/Cursor%20personalizado.cur'), auto !important;
+/* Custom Cursor - Solo en desktop (no touch) */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: url('/assets/Cursor%20personalizado.cur'), auto !important;
+  }
+
+  a, button, [role="button"] {
+    cursor: url('/assets/Cursor%20personalizado.cur'), pointer !important;
+  }
 }
 
-a, button, [role="button"] {
-  cursor: url('/assets/Cursor%20personalizado.cur'), pointer !important;
+/* En touch devices, usar cursor normal */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+  
+  a, button, [role="button"] {
+    cursor: pointer !important;
+  }
 }
 
 @layer utilities {

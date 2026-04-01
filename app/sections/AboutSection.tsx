@@ -78,7 +78,7 @@ export default function AboutSection() {
               NUESTRO LEMA
             </motion.p>
             <h3 className="text-4xl md:text-6xl font-black text-white italic">
-              "LA LUCHA ES JUGANDO"
+              "NUESTRA LUCHA ES JUGANDO"
             </h3>
             <p className="text-gray-400 mt-6 max-w-2xl mx-auto text-lg">
               No se trata solo de ganar o perder. Se trata de dejar todo en la cancha, 

@@ -1,0 +1,1767 @@
+{
+  "exportado": "2026-03-20T17:29:47.850353",
+  "total_jugadores": 38,
+  "total_fechas": 8,
+  "fechas": [
+    {
+      "columna_previo": 1,
+      "columna_post": 2,
+      "fecha": "2026-03-03",
+      "label": "Mar 03"
+    },
+    {
+      "columna_previo": 3,
+      "columna_post": 4,
+      "fecha": "2026-03-05",
+      "label": "Jue 05"
+    },
+    {
+      "columna_previo": 5,
+      "columna_post": 6,
+      "fecha": "2026-03-10",
+      "label": "Mar 10"
+    },
+    {
+      "columna_previo": 7,
+      "columna_post": 8,
+      "fecha": "2026-03-12",
+      "label": "Jue 12"
+    },
+    {
+      "columna_previo": 9,
+      "columna_post": 10,
+      "fecha": "2026-03-17",
+      "label": "Mar 17"
+    },
+    {
+      "columna_previo": 11,
+      "columna_post": 12,
+      "fecha": "2026-03-19",
+      "label": "Jue 19"
+    },
+    {
+      "columna_previo": 13,
+      "columna_post": 14,
+      "fecha": "2026-03-24",
+      "label": "Mar 24"
+    },
+    {
+      "columna_previo": 15,
+      "columna_post": 16,
+      "fecha": "2026-03-26",
+      "label": "Jue 26"
+    }
+  ],
+  "jugadores": [
+    {
+      "nombre": "Agustin Gomez Zalba",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Bepi Fretti",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Bruno Resano",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "llego_tarde"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Fede Gigena Ferraro",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Fercho Chirinos",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Kerra Rodriguez",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Gusa del Valle",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "llego_tarde"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy_tarde",
+          "estado_post": "llego_tarde"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "por_definir",
+          "estado_post": "llego_tarde"
+        }
+      ]
+    },
+    {
+      "nombre": "Gustavo Yaquers",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Jonathan Guillin",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Luis Gustavo Araujo",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Richard Camejo",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Will Morales",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Mauricio Iván jara Ocampo",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "llego_tarde"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Ezequiel Axel Fernández Ruiz",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Fernando Barrios",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "llego_tarde"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Andres Oiene",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Matías Estrada",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Sebastián Otaegui",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Mathias Quiroz",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Ariel Martin",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Ataliva Laprovitta",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Pedro Ezcurra",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Eduardo Araque",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Wilder Ascanio",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "no_voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Nico Leanes",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "exceptuado",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "exceptuado",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "exceptuado",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "exceptuado",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Gabriel Cañete",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Mateo",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Isaias",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "llego_tarde"
+        }
+      ]
+    },
+    {
+      "nombre": "Martin Di Giacomo",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Fernando Benitez",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Manu Cristaldo",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Carlos Perdomo",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Fernando Fernandez",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "no_voy",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Federico Turtl",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "por_definir",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Carlos Medeiros",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "no_voy",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Sergio",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Benja",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "por_definir",
+          "estado_post": "asistio"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "no_asistio"
+        }
+      ]
+    },
+    {
+      "nombre": "Jehissons",
+      "asistencias": [
+        {
+          "fecha": "2026-03-03",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-05",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-10",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-12",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-17",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-19",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-24",
+          "estado_previo": "por_definir",
+          "estado_post": "por_verificar"
+        },
+        {
+          "fecha": "2026-03-26",
+          "estado_previo": "voy",
+          "estado_post": "asistio"
+        }
+      ]
+    }
+  ]
+}

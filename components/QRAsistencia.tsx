@@ -1,6 +1,7 @@
 'use client'
 
 import { QRCodeSVG } from 'qrcode.react'
+import { useState, useEffect } from 'react'
 
 interface QRAsistenciaProps {
   qrToken: string
@@ -8,6 +9,23 @@ interface QRAsistenciaProps {
 }
 
 export default function QRAsistencia({ qrToken, nombre }: QRAsistenciaProps) {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return (
+      <div className="bg-white rounded-2xl p-6 shadow-xl text-center">
+        <div className="animate-pulse">
+          <div className="h-32 bg-gray-200 rounded-xl mb-4"></div>
+          <div className="h-4 bg-gray-200 rounded w-1/2 mx-auto"></div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="bg-white rounded-2xl p-6 shadow-xl text-center">
       <h3 className="text-ruda-black font-black text-xl mb-4">Tu Pase de Asistencia</h3>

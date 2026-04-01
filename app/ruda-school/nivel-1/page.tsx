@@ -33,13 +33,15 @@ function RudasaurioVideo({
 }) {
   const [mostrar, setMostrar] = useState(true)
   const [videoTerminado, setVideoTerminado] = useState(false)
+  const [cargando, setCargando] = useState(true)
+  const [error, setError] = useState(false)
 
   const videos: Record<string, string> = {
     intro: '/assets/Rudasaurio/Rudasaurio%20Woop.mp4',
     celebrating: '/assets/Rudasaurio/Rudasaurio%20Celebrating%20Lesson%20completed.mp4',
     woop: '/assets/Rudasaurio/Rudasaurio%20Woop.mp4',
     error: '/assets/Rudasaurio/Rudasaurio%20Error.mp4',
-    molesto: '/assets/Rudasaurio/RudaSaurio%20Molesto%20.mp4',
+    molesto: '/assets/Rudasaurio/Rudasaurio%20Molesto.mp4',
   }
 
   const mensajes: Record<string, string> = {
@@ -53,24 +55,42 @@ function RudasaurioVideo({
   return (
     <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 animate-fade-in">
       <div className="bg-gray-900 rounded-3xl p-8 max-w-md text-center border-2 border-ruda-gold">
+        {cargando && (
+          <div className="w-80 h-80 mx-auto mb-4 flex items-center justify-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-4 border-ruda-gold border-t-transparent"></div>
+          </div>
+        )}
         <video 
           src={videos[tipo]} 
           autoPlay 
           playsInline
+          muted
+          preload="auto"
+          onLoadedData={() => setCargando(false)}
           onEnded={() => {
             setVideoTerminado(true)
           }}
-          className="w-80 h-80 mx-auto mb-4 object-contain rounded-xl"
+          onError={() => {
+            setError(true)
+            setCargando(false)
+            setVideoTerminado(true)
+          }}
+          className={`w-80 h-80 mx-auto mb-4 object-contain rounded-xl ${cargando ? 'hidden' : ''}`}
         />
+        {error && (
+          <div className="w-80 h-80 mx-auto mb-4 flex items-center justify-center bg-ruda-green/20 rounded-xl">
+            <span className="text-6xl">🏉</span>
+          </div>
+        )}
         <p className="text-xl font-bold text-white mb-4">{mensajes[tipo]}</p>
         
-        {videoTerminado && (
+        {videoTerminado && !cargando && (
           <button 
             onClick={() => {
               setMostrar(false)
               onComplete?.()
             }}
-            className="bg-ruda-gold text-ruda-black px-6 py-2 rounded-full font-bold hover:bg-yellow-400"
+            className="bg-ruda-gold text-ruda-black px-6 py-2 rounded-full font-bold hover:bg-yellow-400 transition-all hover:scale-105"
           >
             Continuar →
           </button>
@@ -333,7 +353,7 @@ function ContenidoLeccion({
         } else {
           onComplete()
         }
-      }, 2000)
+      }, 3500)
     } else {
       setIntentos(intentos + 1)
       if (intentos >= 1) {
@@ -345,7 +365,7 @@ function ContenidoLeccion({
         setMostrarFeedback(false)
         setRespuesta(null)
         setRudasaurioState(null)
-      }, 2000)
+      }, 3000)
     }
   }
 
