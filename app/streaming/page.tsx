@@ -67,7 +67,16 @@ const videosClub = [
 
 // Contenido de streaming en vivo
 // TODO: Agregar contenido real cuando esté disponible
-const contenido = []
+const contenido: Array<{
+  id: string;
+  titulo: string;
+  categoria: string;
+  estado: string;
+  duracion?: string;
+  fecha: string;
+  imagen: string;
+  descripcion: string;
+}> = []
 
 export default function StreamingPage() {
   const [categoriaActiva, setCategoriaActiva] = useState<string | null>(null)
@@ -95,7 +104,7 @@ export default function StreamingPage() {
               <img 
                 src="/assets/Ruda Streaming.png" 
                 alt="Ruda Streaming" 
-                className="h-12 md:h-20 w-auto rounded-lg"
+                className="h-16 md:h-20 w-auto rounded-lg"
               />
               <div className="hidden sm:block">
                 <h1 className="text-lg md:text-xl font-black text-ruda-gold">RUDA STREAMING</h1>

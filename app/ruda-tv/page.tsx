@@ -123,7 +123,7 @@ export default function RudaTVPage() {
               <img 
                 src="/assets/Ruda Streaming.png" 
                 alt="Ruda TV" 
-                className="h-12 md:h-20 w-auto rounded-lg"
+                className="h-16 md:h-20 w-auto rounded-lg"
               />
               <div className="hidden sm:block">
                 <h1 className="text-lg md:text-xl font-black text-ruda-gold">RUDA TV</h1>
