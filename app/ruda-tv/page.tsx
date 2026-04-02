@@ -573,7 +573,7 @@ export default function RudaTVPage() {
               <div className="relative aspect-video rounded-lg overflow-hidden bg-gray-800">
                 <div 
                   className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
-                  style={{ backgroundImage: `url(${item.imagen})` }}
+                  style={{ backgroundImage: `url(${encodeURI(item.imagen)})` }}
                 />
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
                 
