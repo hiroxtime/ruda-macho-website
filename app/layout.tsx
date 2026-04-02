@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import { AuthProvider } from '@/contexts/AuthContext'
 import { ThemeProvider } from '@/contexts/ThemeContext'
 import Header from './components/Header'
+import CustomCursor from './components/CustomCursor'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -74,6 +75,7 @@ export default function RootLayout({
         <meta name="msapplication-tap-highlight" content="no" />
       </head>
       <body className="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+        <CustomCursor />
         <ThemeProvider>
           <AuthProvider>
             <Header />

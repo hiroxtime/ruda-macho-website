@@ -285,7 +285,7 @@ function LoadingScreen({ onComplete }: { onComplete: () => void }) {
   )
 }
 
-// Hero con efectos 'a lo Fang'
+// Hero con efectos 'a lo Fang' - DRAMÁTICO 2000ms+
 function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null)
   const textRef = useRef<HTMLDivElement>(null)
@@ -296,23 +296,85 @@ function HeroSection() {
     if (typeof window === 'undefined') return
 
     const ctx = gsap.context(() => {
-      // Animación del logo
-      gsap.fromTo(logoRef.current, 
-        { opacity: 0, scale: 0.8, y: 30 },
-        { opacity: 1, scale: 1, y: 0, duration: 1.2, ease: 'power3.out' }
+      // Timeline para secuencia dramática
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+
+      // Logo aparece con efecto ELÁSTICO DRAMÁTICO
+      tl.fromTo(logoRef.current, 
+        { opacity: 0, scale: 0.3, y: 100, rotation: -15 },
+        { 
+          opacity: 1, 
+          scale: 1, 
+          y: 0, 
+          rotation: 0,
+          duration: 2.5, 
+          ease: 'elastic.out(1, 0.4)'
+        }
       )
 
-      // Animación del texto con stagger
-      gsap.fromTo(textRef.current?.children || [], 
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'power2.out', delay: 0.3 }
+      // Partículas del logo - ORBITAN durante la animación
+      gsap.to('.logo-particle', {
+        rotation: 360,
+        duration: 8,
+        repeat: -1,
+        ease: 'none',
+        stagger: 0.3
+      })
+
+      // Pulso continuo del logo
+      gsap.to(logoRef.current?.querySelector('.logo-glow') || logoRef.current,
+        { 
+          scale: 1.05,
+          duration: 1.5,
+          repeat: -1,
+          yoyo: true,
+          ease: 'sine.inOut'
+        }
       )
 
-      // Animación de los botones
-      gsap.fromTo(buttonsRef.current?.children || [],
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.8 }
+      // Texto con stagger DRAMÁTICO
+      tl.fromTo(textRef.current?.children || [], 
+        { opacity: 0, y: 80, scale: 0.9 },
+        { 
+          opacity: 1, 
+          y: 0, 
+          scale: 1,
+          duration: 2, 
+          stagger: 0.2, 
+          ease: 'back.out(1.7)'
+        },
+        '-=1.5' // Overlap con el logo
       )
+
+      // Botones con rebote ELÁSTICO
+      tl.fromTo(buttonsRef.current?.children || [],
+        { opacity: 0, y: 50, scale: 0.8 },
+        { 
+          opacity: 1, 
+          y: 0, 
+          scale: 1,
+          duration: 1.5, 
+          stagger: 0.15, 
+          ease: 'elastic.out(1, 0.5)'
+        },
+        '-=1'
+      )
+
+      // Efecto de partículas flotantes en el fondo
+      gsap.to('.hero-particle', {
+        y: -30,
+        x: 'random(-20, 20)',
+        opacity: 0.8,
+        duration: 'random(2, 4)',
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        stagger: {
+          each: 0.2,
+          from: 'random'
+        }
+      })
+
     }, heroRef)
 
     return () => ctx.revert()
