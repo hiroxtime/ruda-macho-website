@@ -14,6 +14,7 @@
     "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/supabase-js": "^2.39.0",
     "framer-motion": "^11.0.0",
+    "gsap": "^3.14.2",
     "html5-qrcode": "^2.3.8",
     "lucide-react": "^0.300.0",
     "next": "^14.2.35",

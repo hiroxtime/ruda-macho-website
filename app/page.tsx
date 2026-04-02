@@ -2,7 +2,14 @@
 
 // Cache bust: 1743447600
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+// Registrar plugins de GSAP
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 // Función para crear emojis volando
 function createEmoji(event: React.MouseEvent, emoji: string) {
@@ -225,8 +232,39 @@ function LoadingScreen({ onComplete }: { onComplete: () => void }) {
 
 // Hero con efectos 'a lo Fang'
 function HeroSection() {
+  const heroRef = useRef<HTMLDivElement>(null)
+  const textRef = useRef<HTMLDivElement>(null)
+  const logoRef = useRef<HTMLDivElement>(null)
+  const buttonsRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const ctx = gsap.context(() => {
+      // Animación del logo
+      gsap.fromTo(logoRef.current, 
+        { opacity: 0, scale: 0.8, y: 30 },
+        { opacity: 1, scale: 1, y: 0, duration: 1.2, ease: 'power3.out' }
+      )
+
+      // Animación del texto con stagger
+      gsap.fromTo(textRef.current?.children || [], 
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'power2.out', delay: 0.3 }
+      )
+
+      // Animación de los botones
+      gsap.fromTo(buttonsRef.current?.children || [],
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'back.out(1.7)', delay: 0.8 }
+      )
+    }, heroRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-ruda-black">
+    <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-ruda-black">
       <style>{`
         @keyframes float-logo {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -253,7 +291,7 @@ function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Logo - Primero en móvil, segundo en desktop */}
-          <div className="order-1 lg:order-2">
+          <div ref={logoRef} className="order-1 lg:order-2">
             <div 
               className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-full lg:max-w-md mx-auto"
               style={{ animation: 'float-logo 4s ease-in-out infinite' }}
@@ -269,7 +307,7 @@ function HeroSection() {
           </div>
           
           {/* Texto - Segundo en móvil, primero en desktop */}
-          <div className="order-2 lg:order-1">
+          <div ref={textRef} className="order-2 lg:order-1">
             <h1 className="text-5xl md:text-7xl font-black text-white leading-none mb-6">
               <span className="block">NUESTRA LUCHA</span>
               <span 
@@ -290,7 +328,7 @@ function HeroSection() {
               Más que un club. Somos una familia unida por la pasión del rugby.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start flex-wrap">
+            <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start flex-wrap">
               <Link 
                 href="/ruda-school" 
                 className="inline-block px-8 py-4 bg-ruda-gold text-ruda-black font-black text-lg rounded-lg transition-all hover:scale-105 hover:shadow-xl hover:shadow-ruda-gold/30 text-center"
@@ -322,9 +360,83 @@ function HeroSection() {
 // Nosotros + Comisión con efectos
 function AboutSection() {
   const [historiaExpandida, setHistoriaExpandida] = useState(false)
-  
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const cardsRef = useRef<HTMLDivElement>(null)
+  const statsRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const ctx = gsap.context(() => {
+      // Animación del lema
+      gsap.fromTo('.lema-container',
+        { opacity: 0, y: 50 },
+        { 
+          opacity: 1, y: 0, 
+          duration: 1, 
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.lema-container',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      )
+
+      // Animación de las stats cards
+      gsap.fromTo(statsRef.current?.children || [],
+        { opacity: 0, y: 30, scale: 0.9 },
+        { 
+          opacity: 1, y: 0, scale: 1,
+          duration: 0.6, 
+          stagger: 0.1,
+          ease: 'back.out(1.4)',
+          scrollTrigger: {
+            trigger: statsRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      )
+
+      // Animación de las cards de comisión
+      gsap.fromTo('.card-team',
+        { opacity: 0, y: 40, scale: 0.95 },
+        { 
+          opacity: 1, y: 0, scale: 1,
+          duration: 0.8, 
+          stagger: 0.15,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: cardsRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      )
+
+      // Animación de los pilares
+      gsap.fromTo('.pilar-card',
+        { opacity: 0, y: 20 },
+        { 
+          opacity: 1, y: 0,
+          duration: 0.5, 
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '.pilares-grid',
+            start: 'top 90%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      )
+    }, sectionRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <section id="nosotros" className="py-24 bg-white relative overflow-hidden">
+    <section ref={sectionRef} id="nosotros" className="py-24 bg-white relative overflow-hidden">
       <style>{`
         @keyframes fade-in-up {
           from { opacity: 0; transform: translateY(30px); }
