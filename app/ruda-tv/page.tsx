@@ -603,6 +603,7 @@ export default function RudaTVPage() {
                   {item.titulo}
                 </h4>
                 <p className="text-xs text-gray-500 mt-1">{item.descripcion}</p>
+                <p className="text-xs text-gray-400 mt-1">📅 {new Date(item.fecha).toLocaleDateString('es-AR', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
               </div>
             </div>
           ))}
