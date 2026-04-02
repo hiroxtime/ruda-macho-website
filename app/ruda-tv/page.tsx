@@ -8,53 +8,325 @@ const ligas = [
   { id: 'NRL', nombre: 'NRL', pais: 'Australia', color: 'bg-green-600', icono: '🇦🇺' },
   { id: 'URC', nombre: 'United Rugby Championship', pais: 'Europa', color: 'bg-blue-600', icono: '🇪🇺' },
   { id: 'Premiership', nombre: 'Premiership Rugby', pais: 'Inglaterra', color: 'bg-red-600', icono: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
+  { id: 'Top14', nombre: 'Top 14', pais: 'Francia', color: 'bg-blue-700', icono: '🇫🇷' },
+  { id: 'SuperRugby', nombre: 'Super Rugby Pacific', pais: 'Oceanía', color: 'bg-orange-600', icono: '🌏' },
+  { id: 'SuperLeague', nombre: 'Super League', pais: 'Inglaterra', color: 'bg-yellow-600', icono: '🏉' },
+  { id: 'AFL', nombre: 'AFL', pais: 'Australia', color: 'bg-red-500', icono: '🦘' },
 ]
 
 // Partidos internacionales
 const partidos = [
+  // NRL - 28 March 2026
   {
-    id: '1',
+    id: 'nrl1',
     titulo: 'Canterbury Bulldogs vs Newcastle Knights',
     liga: 'NRL',
     duracion: '1:24:30',
     fecha: '2026-03-28',
-    imagen: '/assets/streaming/canterbury-bulldogs-newcastle-knights.jpg',
+    imagen: '/assets/Retransmisiones/Canterbury Bulldogs vs Newcastle Knights.jpg',
     descripcion: 'NRL - Full Match Replay',
     fuente: 'dailymotion',
     videoId: 'xa3jfd0',
   },
   {
-    id: '2',
+    id: 'nrl2',
     titulo: 'Penrith Panthers vs Parramatta Eels',
     liga: 'NRL',
     duracion: '1:30:00',
     fecha: '2026-03-28',
-    imagen: '/assets/streaming/panthers-eels.jpg',
+    imagen: '/assets/Retransmisiones/Panthers VS Eels.jpg',
     descripcion: 'NRL - Full Match Replay',
     fuente: 'dailymotion',
     videoId: 'xa3jiju',
   },
   {
-    id: '3',
+    id: 'nrl3',
+    titulo: 'Gold Coast Titans vs St. George Illawarra Dragons',
+    liga: 'NRL',
+    duracion: '1:28:00',
+    fecha: '2026-03-29',
+    imagen: '/assets/Retransmisiones/Gold Coast Titans vs St. George Illawarra Dragons.jpg',
+    descripcion: 'NRL - Full Match Replay',
+    fuente: 'dailymotion',
+    videoId: 'xa3m2qa',
+  },
+  {
+    id: 'nrl4',
+    titulo: 'Canberra Raiders vs Cronulla Sharks',
+    liga: 'NRL',
+    duracion: '1:26:00',
+    fecha: '2026-03-29',
+    imagen: '/assets/Retransmisiones/Canberra Raiders vs Cronulla Sharks.jpg',
+    descripcion: 'NRL - Full Match Replay',
+    fuente: 'dailymotion',
+    videoId: 'xa3m2qe',
+  },
+  {
+    id: 'nrl5',
+    titulo: 'North Queensland Cowboys vs Melbourne Storm',
+    liga: 'NRL',
+    duracion: '1:32:00',
+    fecha: '2026-03-28',
+    imagen: '/assets/Retransmisiones/North Queensland Cowboys.jpg',
+    descripcion: 'NRL - Full Match Replay',
+    fuente: 'dailymotion',
+    videoId: 'xa3jj8u',
+  },
+  // URC - United Rugby Championship
+  {
+    id: 'urc1',
     titulo: 'Leinster vs Scarlets',
     liga: 'URC',
     duracion: '1:22:15',
     fecha: '2026-03-27',
-    imagen: '/assets/streaming/leinster-scarlets.jpg',
+    imagen: '/assets/Retransmisiones/Leinster vs Scarlets Rugby.jpg',
     descripcion: 'United Rugby Championship',
     fuente: 'dailymotion',
     videoId: 'xa3iqt0',
+    videoIdPart2: 'xa3ir38',
   },
   {
-    id: '4',
+    id: 'urc2',
+    titulo: 'Zebre vs Ulster',
+    liga: 'URC',
+    duracion: '1:20:00',
+    fecha: '2026-03-28',
+    imagen: '/assets/Retransmisiones/Zebre vs Ulster Rugby.jpg',
+    descripcion: 'United Rugby Championship',
+    fuente: 'dailymotion',
+    videoId: 'xa3jyr4',
+    videoIdPart2: 'xa3jyr0',
+  },
+  {
+    id: 'urc3',
+    titulo: 'Stormers vs Edinburgh',
+    liga: 'URC',
+    duracion: '1:25:00',
+    fecha: '2026-03-28',
+    imagen: '/assets/Retransmisiones/Stormers vs Edinburgh Rugby.jpg',
+    descripcion: 'United Rugby Championship',
+    fuente: 'dailymotion',
+    videoId: 'xa3jv1a',
+    videoIdPart2: 'xa3jv18',
+  },
+  {
+    id: 'urc4',
+    titulo: 'Lions vs Dragons',
+    liga: 'URC',
+    duracion: '1:18:00',
+    fecha: '2026-03-28',
+    imagen: '/assets/Retransmisiones/Lions vs Dragons Rugby.jpg',
+    descripcion: 'United Rugby Championship',
+    fuente: 'dailymotion',
+    videoId: 'xa3ju5g',
+    videoIdPart2: 'xa3ju5i',
+  },
+  {
+    id: 'urc5',
+    titulo: 'Bulls vs Munster',
+    liga: 'URC',
+    duracion: '1:24:00',
+    fecha: '2026-03-28',
+    imagen: '/assets/Retransmisiones/Bulls vs Munster Rugby.jpg',
+    descripcion: 'United Rugby Championship',
+    fuente: 'dailymotion',
+    videoId: 'xa3jpqi',
+    videoIdPart2: 'xa3jpqk',
+  },
+  {
+    id: 'urc6',
+    titulo: 'Connacht vs Ospreys',
+    liga: 'URC',
+    duracion: '1:19:00',
+    fecha: '2026-03-28',
+    imagen: '/assets/Retransmisiones/Connacht vs Ospreys Rugby.jpg',
+    descripcion: 'United Rugby Championship',
+    fuente: 'dailymotion',
+    videoId: 'xa3jp2s',
+    videoIdPart2: 'xa3jp2q',
+  },
+  // Premiership Rugby
+  {
+    id: 'prem1',
     titulo: 'Newcastle Red Bulls vs Exeter Chiefs',
     liga: 'Premiership',
     duracion: '1:18:45',
     fecha: '2026-03-27',
-    imagen: '/assets/streaming/newcastle-red-bulls-exeter-chiefs.jpg',
+    imagen: '/assets/Retransmisiones/Newcastle Red Bulls vs Exeter Chiefs.jpg',
     descripcion: 'Premiership Rugby',
     fuente: 'dailymotion',
     videoId: 'xa3iq7k',
+    videoIdPart2: 'xa3iq7m',
+  },
+  {
+    id: 'prem2',
+    titulo: 'Sale Sharks vs Bath',
+    liga: 'Premiership',
+    duracion: '1:22:00',
+    fecha: '2026-03-29',
+    imagen: '/assets/Retransmisiones/Sale Sharks vs Bath Rugby.jpg',
+    descripcion: 'Premiership Rugby',
+    fuente: 'dailymotion',
+    videoId: 'xa3m75e',
+    videoIdPart2: 'xa3m75g',
+  },
+  {
+    id: 'prem3',
+    titulo: 'Saracens vs Northampton Saints',
+    liga: 'Premiership',
+    duracion: '1:26:00',
+    fecha: '2026-03-28',
+    imagen: '/assets/Retransmisiones/Saracens vs Northampton Saints Rugby.jpg',
+    descripcion: 'Premiership Rugby',
+    fuente: 'dailymotion',
+    videoId: 'xa3jzus',
+    videoIdPart2: 'xa3jzuq',
+  },
+  {
+    id: 'prem4',
+    titulo: 'Bristol Bears vs Harlequins',
+    liga: 'Premiership',
+    duracion: '1:20:00',
+    fecha: '2026-03-28',
+    imagen: '/assets/Retransmisiones/Bristol Bears vs Harlequins Rugby.jpg',
+    descripcion: 'Premiership Rugby',
+    fuente: 'dailymotion',
+    videoId: 'xa3jxdu',
+    videoIdPart2: 'xa3jyr2',
+  },
+  {
+    id: 'prem5',
+    titulo: 'Gloucester vs Leicester Tigers',
+    liga: 'Premiership',
+    duracion: '1:24:00',
+    fecha: '2026-03-28',
+    imagen: '/assets/Retransmisiones/Gloucester vs Leicester Tigers Rugby.jpg',
+    descripcion: 'Premiership Rugby',
+    fuente: 'dailymotion',
+    videoId: 'xa3jvqe',
+    videoIdPart2: 'xa3jvqg',
+  },
+  // Top 14
+  {
+    id: 'top14_1',
+    titulo: 'Stade Francais vs Clermont Auvergne',
+    liga: 'Top14',
+    duracion: '1:28:00',
+    fecha: '2026-03-29',
+    imagen: '/assets/Retransmisiones/Stade Francais vs Clermont Auvergne Rugby.jpg',
+    descripcion: 'Top 14 - Francia',
+    fuente: 'dailymotion',
+    videoId: 'xa3nous',
+    videoIdPart2: 'xa3nouu',
+  },
+  {
+    id: 'top14_2',
+    titulo: 'Bayonne vs La Rochelle',
+    liga: 'Top14',
+    duracion: '1:25:00',
+    fecha: '2026-03-28',
+    imagen: '/assets/Retransmisiones/Bayonne vs La Rochelle Rugby.jpg',
+    descripcion: 'Top 14 - Francia',
+    fuente: 'dailymotion',
+    videoId: 'xa3k0r0',
+    videoIdPart2: 'xa3k0r2',
+  },
+  {
+    id: 'top14_3',
+    titulo: 'Toulouse vs Montpellier',
+    liga: 'Top14',
+    duracion: '1:30:00',
+    fecha: '2026-03-28',
+    imagen: '/assets/Retransmisiones/Toulouse vs Montpellier Rugby.jpg',
+    descripcion: 'Top 14 - Francia',
+    fuente: 'dailymotion',
+    videoId: 'xa3jrdg',
+    videoIdPart2: 'xa3jrdi',
+  },
+  {
+    id: 'top14_4',
+    titulo: 'Pau vs Racing 92',
+    liga: 'Top14',
+    duracion: '1:22:00',
+    fecha: '2026-03-28',
+    imagen: '/assets/Retransmisiones/Pau vs Racing 92 Rugby 28.jpg',
+    descripcion: 'Top 14 - Francia',
+    fuente: 'dailymotion',
+    videoId: 'xa3jqj8',
+    videoIdPart2: 'xa3jqjc',
+  },
+  // Super Rugby Pacific
+  {
+    id: 'srp1',
+    titulo: 'Western Force vs Chiefs',
+    liga: 'SuperRugby',
+    duracion: '1:26:00',
+    fecha: '2026-03-28',
+    imagen: '/assets/Retransmisiones/Western Force vs Chiefs.jpg',
+    descripcion: 'Super Rugby Pacific',
+    fuente: 'dailymotion',
+    videoId: 'xa3jnbq',
+    videoIdPart2: 'xa3jniy',
+  },
+  {
+    id: 'srp2',
+    titulo: 'Blues vs Fijian Drua',
+    liga: 'SuperRugby',
+    duracion: '1:24:00',
+    fecha: '2026-03-28',
+    imagen: '/assets/Retransmisiones/Blues vs Fijian Drua.jpg',
+    descripcion: 'Super Rugby Pacific',
+    fuente: 'dailymotion',
+    videoId: 'xa3jliq',
+    videoIdPart2: 'xa3jmdu',
+  },
+  {
+    id: 'srp3',
+    titulo: 'Hurricanes vs Reds',
+    liga: 'SuperRugby',
+    duracion: '1:22:00',
+    fecha: '2026-03-28',
+    imagen: '/assets/Retransmisiones/Hurricanes vs Reds.jpg',
+    descripcion: 'Super Rugby Pacific',
+    fuente: 'dailymotion',
+    videoId: 'xa3jmds',
+    videoIdPart2: 'xa3jmdq',
+  },
+  // Super League
+  {
+    id: 'sl1',
+    titulo: 'Leeds Rhinos vs Warrington Wolves',
+    liga: 'SuperLeague',
+    duracion: '1:28:00',
+    fecha: '2026-03-29',
+    imagen: '/assets/Retransmisiones/Leeds Rhinos vs Warrington Wolves.jpg',
+    descripcion: 'Super League - Inglaterra',
+    fuente: 'dailymotion',
+    videoId: 'xa3m7na',
+    videoIdPart2: 'xa3m7nc',
+  },
+  {
+    id: 'sl2',
+    titulo: 'Hull FC vs Catalans Dragons',
+    liga: 'SuperLeague',
+    duracion: '1:25:00',
+    fecha: '2026-03-29',
+    imagen: '/assets/Retransmisiones/Hull FC vs Catalans Dragons.jpg',
+    descripcion: 'Super League - Inglaterra',
+    fuente: 'dailymotion',
+    videoId: 'xa3m45m',
+  },
+  // AFL
+  {
+    id: 'afl1',
+    titulo: 'St Kilda Saints vs Brisbane Lions',
+    liga: 'AFL',
+    duracion: '2:15:00',
+    fecha: '2026-03-28',
+    imagen: '/assets/Retransmisiones/St Kilda Saints vs Brisbane Lions.jpg',
+    descripcion: 'AFL - Australian Football League',
+    fuente: 'mailru',
+    videoId: '_myvideo/11',
   },
 ]
 
@@ -110,8 +382,15 @@ const videosClub = [
 export default function RudaTVPage() {
   const [ligaActiva, setLigaActiva] = useState<string | null>(null)
   const [videoSeleccionado, setVideoSeleccionado] = useState<typeof partidos[0] | null>(null)
+  const [parteActiva, setParteActiva] = useState<1 | 2>(1)
 
   const partidosFiltrados = partidos.filter(c => !ligaActiva || c.liga === ligaActiva)
+  
+  // Resetear parte activa cuando cambia el video
+  const handleVideoSelect = (video: typeof partidos[0]) => {
+    setVideoSeleccionado(video)
+    setParteActiva(1)
+  }
 
   return (
     <div className="min-h-screen bg-ruda-black text-white">
@@ -190,7 +469,7 @@ export default function RudaTVPage() {
             <div className="aspect-video relative">
               {videoSeleccionado.fuente === 'dailymotion' && videoSeleccionado.videoId ? (
                 <iframe
-                  src={`https://www.dailymotion.com/embed/video/${videoSeleccionado.videoId}?autoplay=1`}
+                  src={`https://www.dailymotion.com/embed/video/${parteActiva === 2 && videoSeleccionado.videoIdPart2 ? videoSeleccionado.videoIdPart2 : videoSeleccionado.videoId}?autoplay=1`}
                   className="w-full h-full"
                   allow="autoplay; fullscreen"
                   allowFullScreen
@@ -219,6 +498,32 @@ export default function RudaTVPage() {
                 </div>
               )}
             </div>
+            
+            {/* Selector de partes */}
+            {videoSeleccionado.videoIdPart2 && (
+              <div className="flex gap-2 p-3 border-t border-gray-800">
+                <button
+                  onClick={() => setParteActiva(1)}
+                  className={`flex-1 py-2 px-4 rounded font-medium transition-all ${
+                    parteActiva === 1 
+                      ? 'bg-ruda-gold text-ruda-black' 
+                      : 'bg-gray-700 text-white hover:bg-gray-600'
+                  }`}
+                >
+                  Parte 1
+                </button>
+                <button
+                  onClick={() => setParteActiva(2)}
+                  className={`flex-1 py-2 px-4 rounded font-medium transition-all ${
+                    parteActiva === 2 
+                      ? 'bg-ruda-gold text-ruda-black' 
+                      : 'bg-gray-700 text-white hover:bg-gray-600'
+                  }`}
+                >
+                  Parte 2
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -262,7 +567,7 @@ export default function RudaTVPage() {
           {partidosFiltrados.map((item) => (
             <div
               key={item.id}
-              onClick={() => setVideoSeleccionado(item)}
+              onClick={() => handleVideoSelect(item)}
               className="group cursor-pointer"
             >
               <div className="relative aspect-video rounded-lg overflow-hidden bg-gray-800">
@@ -285,6 +590,12 @@ export default function RudaTVPage() {
                 <span className={`absolute top-2 left-2 ${ligas.find(l => l.id === item.liga)?.color} text-white text-xs px-2 py-1 rounded font-bold`}>
                   {item.liga}
                 </span>
+
+                {item.videoIdPart2 && (
+                  <span className="absolute top-2 right-12 bg-purple-600 text-white text-xs px-2 py-1 rounded font-bold">
+                    2 PARTES
+                  </span>
+                )}
               </div>
 
               <div className="mt-2">
