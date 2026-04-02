@@ -583,19 +583,20 @@ export default function RudaTVPage() {
                   </div>
                 </div>
 
-                <span className="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-2 py-1 rounded">
-                  {item.duracion}
-                </span>
+                <div className="absolute bottom-2 right-2 flex items-center gap-1">
+                  <span className="bg-black/80 text-white text-xs px-2 py-1 rounded">
+                    {item.duracion}
+                  </span>
+                  {item.videoIdPart2 && (
+                    <span className="bg-purple-600 text-white text-xs px-2 py-1 rounded font-bold">
+                      2P
+                    </span>
+                  )}
+                </div>
 
                 <span className={`absolute top-2 left-2 ${ligas.find(l => l.id === item.liga)?.color} text-white text-xs px-2 py-1 rounded font-bold`}>
                   {item.liga}
                 </span>
-
-                {item.videoIdPart2 && (
-                  <span className="absolute top-2 right-12 bg-purple-600 text-white text-xs px-2 py-1 rounded font-bold">
-                    2 PARTES
-                  </span>
-                )}
               </div>
 
               <div className="mt-2">
