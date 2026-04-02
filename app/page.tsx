@@ -52,16 +52,71 @@ function createEmoji(event: React.MouseEvent, emoji: string) {
   }
 }
 
-// Pantalla de carga con animaciones
+// Pantalla de carga con animaciones GSAP
 function LoadingScreen({ onComplete }: { onComplete: () => void }) {
   const [progress, setProgress] = useState(0)
+  const logoRef = useRef<HTMLDivElement>(null)
+  const textRef = useRef<HTMLDivElement>(null)
+  const progressRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    // Animación inicial del logo
+    gsap.fromTo(logoRef.current,
+      { opacity: 0, scale: 0.5, rotation: -10 },
+      { opacity: 1, scale: 1, rotation: 0, duration: 1.2, ease: 'elastic.out(1, 0.5)' }
+    )
+
+    // Animación del texto con scramble
+    gsap.fromTo(textRef.current,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', delay: 0.3 }
+    )
+
+    // Animación continua de partículas orbitales
+    gsap.to('.particle-orbital', {
+      rotation: 360,
+      duration: 3,
+      repeat: -1,
+      ease: 'none',
+      stagger: {
+        each: 0.5,
+        from: 'random'
+      }
+    })
+
+    // Pulso del logo durante carga
+    gsap.to(logoRef.current?.querySelector('.logo-inner') || logoRef.current,
+      { 
+        scale: 1.02,
+        duration: 0.8,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+      }
+    )
+
+  }, [])
 
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
           clearInterval(timer)
-          setTimeout(onComplete, 500)
+          // Animación de salida dramática
+          if (containerRef.current) {
+            gsap.to(containerRef.current, {
+              opacity: 0,
+              scale: 1.1,
+              duration: 0.6,
+              ease: 'power2.inOut',
+              onComplete
+            })
+          } else {
+            setTimeout(onComplete, 500)
+          }
           return 100
         }
         return prev + 1
@@ -95,7 +150,7 @@ function LoadingScreen({ onComplete }: { onComplete: () => void }) {
         }
       `}</style>
 
-      <div className="w-full max-w-5xl flex flex-col items-center">
+      <div ref={containerRef} className="w-full max-w-5xl flex flex-col items-center">
         
         <div className="w-full max-w-3xl mb-8">
           <div className="relative rounded-xl overflow-hidden shadow-2xl shadow-ruda-gold/20">
@@ -123,7 +178,7 @@ function LoadingScreen({ onComplete }: { onComplete: () => void }) {
           </div>
         </div>
 
-        <div className="relative w-48 h-48 mb-8">
+        <div ref={logoRef} className="relative w-48 h-48 mb-8">
           
           <div 
             className="absolute inset-0 rounded-full"
@@ -212,14 +267,14 @@ function LoadingScreen({ onComplete }: { onComplete: () => void }) {
           </div>
         </div>
 
-        <div className="text-center">
+        <div ref={textRef} className="text-center">
           <p className="text-ruda-gold font-black text-xl tracking-[0.5em] mb-4 animate-pulse">
             CARGANDO
           </p>          
-          <div className="w-56 h-2 bg-gray-800 rounded-full overflow-hidden mx-auto mb-3">
+          <div ref={progressRef} className="w-56 h-2 bg-gray-800 rounded-full overflow-hidden mx-auto mb-3">
             <div 
-              className="h-full bg-gradient-to-r from-ruda-gold via-ruda-gold-light to-ruda-gold rounded-full"
-              style={{ width: `${progress}%`, transition: 'width 0.1s linear' }}
+              className="h-full bg-gradient-to-r from-ruda-gold via-ruda-gold-light to-ruda-gold rounded-full transition-all duration-100"
+              style={{ width: `${progress}%` }}
             />
           </div>
           
