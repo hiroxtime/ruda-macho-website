@@ -384,7 +384,7 @@ export default function RudaTVPage() {
   const [videoSeleccionado, setVideoSeleccionado] = useState<typeof partidos[0] | null>(null)
   const [parteActiva, setParteActiva] = useState<1 | 2>(1)
 
-  const partidosFiltrados = partidos.filter(c => !ligaActiva || c.liga === ligaActiva)
+  const partidosFiltrados = partidos.filter(c => !ligaActiva || c.liga === ligaActiva).sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime())
   
   // Resetear parte activa cuando cambia el video
   const handleVideoSelect = (video: typeof partidos[0]) => {
