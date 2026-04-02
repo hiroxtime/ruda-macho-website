@@ -412,5 +412,78 @@ La seguridad está en las políticas RLS de Supabase, no en ocultar estas claves
 
 ---
 
+## 🖼️ Imágenes Estáticas
+
+### Imágenes no cargan en producción
+
+**Síntoma:** Imágenes funcionan localmente pero no en Netlify.
+
+**Causa:** Archivos en `assets/` en lugar de `public/assets/`.
+
+**Solución:**
+```bash
+# Next.js sirve archivos estáticos desde public/
+# Mover imágenes a:
+mv assets/Retransmisiones public/assets/Retransmisiones
+```
+
+### URLs con espacios rompen CSS backgroundImage
+
+**Síntoma:** Imágenes con espacios en el nombre no cargan.
+
+**Causa:** CSS no puede parsear URLs con espacios.
+
+**Solución:**
+```tsx
+// MAL
+style={{ backgroundImage: `url(${item.imagen})` }}
+
+// BIEN
+style={{ backgroundImage: `url(${encodeURI(item.imagen)})` }}
+```
+
+---
+
+## 📺 Videos y Multipartes
+
+### Videos con múltiples partes
+
+**Implementación:**
+```tsx
+// En el array de datos
+{
+  id: 'partido1',
+  titulo: 'Leinster vs Scarlets',
+  videoId: 'xa3iqt0',      // Parte 1
+  videoIdPart2: 'xa3ir38', // Parte 2 (opcional)
+}
+
+// En el componente
+const [parteActiva, setParteActiva] = useState<1 | 2>(1)
+
+const videoIdActual = parteActiva === 2 && item.videoIdPart2 
+  ? item.videoIdPart2 
+  : item.videoId
+
+// Selector de partes
+{item.videoIdPart2 && (
+  <div className="flex gap-2">
+    <button onClick={() => setParteActiva(1)}>Parte 1</button>
+    <button onClick={() => setParteActiva(2)}>Parte 2</button>
+  </div>
+)}
+```
+
+### Ordenar contenido por fecha
+
+**Solución:**
+```tsx
+const partidosOrdenados = partidos
+  .filter(c => !ligaActiva || c.liga === ligaActiva)
+  .sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime())
+```
+
+---
+
 *Última actualización: 2026-04-01*
 *Proyecto: Ruda Macho Rugby Club*
